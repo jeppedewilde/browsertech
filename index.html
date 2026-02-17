@@ -113,30 +113,20 @@
                 <label for="year-changes">Jaar</label>
                 <input type="text" id="year-changes" name="year" pattern="[0-9]{4}" required>
             </fieldset>
-            </fieldset>
             <h2>Gegevens gemachtigde</h2>
             <fieldset>
                 <legend>Persoonsgegevens gemachtigde</legend>
-                
-                <input type="radio" id="bsn-rsin" name="bsn-rsin" value="bsn" required>
+
                 <label for="bsn-rsin">Bsn/RSIN gemachtigde</label>
-                
-                <input type="radio" id="becon-number" name="becon-number" value="becon-number" required>
+                <input type="text" id="bsn-rsin" name="bsn-rsin" pattern="[0-9]{9}">
+
                 <label for="becon-number">Beconnummer adviseur</label>
-                
-                <input type="radio" id="protocol-number2" name="protocol-number2" value="protocol-number2" required>
+                <input type="text" id="becon-number" name="becon-number" pattern="[0-9]{9}">
+
                 <label for="protocol-number2">Protocolnummer notaris</label>
-                
-                <label for="bsn-rsin2">Bsn/RSIN gemachtigde</label>
-                <input type="text" id="bsn-rsin2" name="bsn-rsin2" pattern="[0-9]{9}">
+                <input type="text" id="protocol-number2" name="protocol-number2">
+                <!-- kan protocolnummer notaris al ingevuld zijn als dit eerder ook ingevuld is? -->
 
-                <label for="becon-number2">Beconnummer adviseur</label>
-                <input type="text" id="becon-number2" name="becon-number2" pattern="[0-9]{9}">
-
-                <label for="protocol-number3">Protocolnummer notaris</label>
-                <input type="text" id="protocol-number3" name="protocol-number3">
-                <!-- kan deze al ingevuld zijn als dit eerder ook ingevuld is? -->
-                
                 <label for="initials-authorized">Voorletter(s)</label>
                 <input type="text" id="initials-authorized" name="initials" required>
                 <label for="infix-authorized">Tussenvoegsel(s)</label>
@@ -146,13 +136,6 @@
 
                 <label for="institution">Naam instelling (bijvoorbeeld notarisbureau)</label>
                 <input type="text" id="institution" name="institution" required>
-
-                <!-- kiezen nederland of buitenland -->
-                <input type="text" id="adress-nl" name="adress-nl">
-                <label for="adress-nl">Adres in Nederland</label>
-
-                <input type="text" id="adress-abroad" name="adress-abroad">
-                <label for="adress-abroad">Adres buitenland</label>
 
                 <!-- adres in nederland -->
                 <input type="text" id="street" name="street" required>
@@ -192,6 +175,27 @@
 
                 <input type="email" id="email" name="email" required>
                 <label for="email">E-mailadres</label>
+            </fieldset>
+            <h2>Voor wie doet u aangifte?</h2>
+            <fieldset>
+                <legend>Informatie verkrijgers</legend>
+                <fieldset>
+                    <legend>Kies welke van onderstaande situaties voor u geldt.</legend>
+                    <input type="checkbox" id="executor" name="executor" aria-controls="nr-acquirers">
+                    <label for="executor"> Ik ben executeur en doe aangifte voor alle personen en/of instellingen die
+                        iets krijgen uit de nalatenschap (verkrijgers).</label>
+                    <input type="checkbox" id="heir_authorized" name="heir_authorized">
+                    <label for="heir_authorized"> Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor meerdere
+                        personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers).</label>
+                    <input type="checkbox" id="heir-multiple" name="heir-multiple">
+                    <label for="heir-multiple">Ik ben erfgenaam en doe samen met andere ergenamen aangifte.</label>
+                    <input type="checkbox" id="heir-solo" name="heir-solo">
+                    <label for="heir-solo">Ik ben erfgenaam en doe alleen aangifte voor mijzelf.</label>
+                    <input type="checkbox" name="no-heir" id="no-heir">
+                    <label for="no-heir">Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te doen.</label>
+                    <label for="nr-acquirers">Geef aan voor hoeveel verkrijgers u aangifte doet. Bent u zelf ook verkrijger? Tel uzelf dan ook mee. Aantal verkrijgers:</label>
+                    <input type="number" name="nr-acquirers" pattern="[0-9]{1-4}">
+                </fieldset>
             </fieldset>
             <button type="submit">Verzenden</button>
         </form>
