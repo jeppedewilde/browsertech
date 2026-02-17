@@ -5,7 +5,7 @@
 ## week 1
 
 ### maandag 16 februari
-wat heb ik vandaag gedaan? -> ik was vandaag wat later (12uur) ivm rijles en had de uitleg van de eindopdracht daardoor gemist. ik ben dus begonnen met het doornemen van de eindopdracht en zorgen dat ik deze begreep. ik heb het belastingformulier doorgenomen en nagedacht over wat de html code-opbouw van het formulier zou zijn. daarna ben ik begonnen met het formulier in html zetten. ik heb deel 1 (gegevens van de overledene) afgekregen. om 4uur heb ik dit tijdens de checkout besproken met joshua.
+wat heb ik vandaag gedaan? -> ik was vandaag wat later (12uur) ivm rijles en had de uitleg van de eindopdracht daardoor gemist. ik ben dus begonnen met het doornemen van de eindopdracht en zorgen dat ik deze begreep. ik heb het belastingformulier doorgenomen en nagedacht over wat de html code-opbouw van het formulier zou zijn. daarna ben ik begonnen met het formulier in html zetten. ik heb deel 1 (gegevens van de overledene) afgekregen. toen ik dat eerste deel html had gedaan heb ik het weekly geek artikel "it’s hard to justify tahoe icons" gelezen. om 4uur heb ik dit tijdens de checkout besproken met joshua.
 
 hoelang heb ik daarover gedaan? -> ik heb ongeveer een uur gedaan over het doornemen van de opdracht en het voorbereiden. daarna heb ik ongeveer 3 uur gewerkt aan het formulier.
 
@@ -15,7 +15,7 @@ wat ga ik morgen doen? -> morgen ga ik verder met het opbouwen van het formulier
 
 
 ### dinsdag 17 februari
-wat heb ik vandaag gedaan? -> vandaag ben ik verder gegaan met het opbouwen van het formulier in de html. ik heb deel 2 (gegevens gemachtigde) en deel 3 (voor wie doet u aangifte?) toegevoegd. ik was even vergeten dat ik maar 2 delen hoefde te doen dus ik heb hier iets meer tijd dan nodig in gestopt. ik had vandaag wat moeite met concentreren en heb daardoor minder voor elkaar gekregen dan ik had gewild. ook heb ik vandaag bij vasilis de workshop html gevolgd en mijn readme bijgewerkt.
+wat heb ik vandaag gedaan? -> vandaag begon de dag met een klassikale wooclap en bespreken van het weekly geek artikel. met de mensen in mijn rij kwamen wij tot een aantal conclusies: soms is het beter om helemaal géén icoon te gebruiken en inconsistent icoongebruik zorgt voor onduidelijk en maakt de UI minder gebruiksvriendelijk. ben ik verder gegaan met het opbouwen van het formulier in de html. ik heb deel 2 (gegevens gemachtigde) en deel 3 (voor wie doet u aangifte?) toegevoegd. ik was even vergeten dat ik maar 2 delen hoefde te doen dus ik heb hier iets meer tijd dan nodig in gestopt. ik had vandaag wat moeite met concentreren en heb daardoor minder voor elkaar gekregen dan ik had gewild. ook heb ik vandaag bij vasilis de workshop html gevolgd en mijn readme bijgewerkt.
 
 hoelang heb ik daarover gedaan? -> de workshop duurde ongeveer een uur, de rest van de dag ben ik bezig geweest met het opbouwen van het formulier in de html en het bijwerken van mijn readme. 
 
