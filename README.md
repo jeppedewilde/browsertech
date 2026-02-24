@@ -1,6 +1,7 @@
 # browsertech
 
-
+> [!NOTE]
+> Dit is een schoolopdracht
 
 ## week 1
 
