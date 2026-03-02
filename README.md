@@ -26,25 +26,29 @@ wat ga ik de volgende keer doen? -> het formulier, dat nu alleen html is, enhanc
 
 
 ### weekvoortgang
+Deze eerste week van BT begon voor mij een beetje hobbelig omdat ik door mijn rijles de start van het vak had gemist. Ondanks dat heb ik de draad snel opgepakt en veel html geschreven. Ook heb ik mij meteen verdiept in patterns zodat ik die aan mijn html kon toevoegen. Ik heb per ongeluk 3 hoofdstukken uitgewerkt in plaats van 2, maar hoofdstuk 2 en 3 zijn niet heel lang dus ik denk dat ik beide wel kan uitwerken. Hierdoor ben ik wel iets langer dan gepland bezig geweest met het schrijven van html en heb ik nog niet gewerkt aan de progressive enhancement met javascript. Dit is hoe het formulier er nu uit ziet:
 
+<img width="1710" height="771" alt="Scherm­afbeelding 2026-03-02 om 12 06 47" src="https://github.com/user-attachments/assets/66fda614-1c8d-4aae-860a-731f87b5aa75" />
+<img width="1710" height="386" alt="Scherm­afbeelding 2026-03-02 om 12 07 01" src="https://github.com/user-attachments/assets/e73c04f1-b07d-4672-b529-b19fa3887ac5" />
 
+Tijdens het voortgangsgesprek heb ik wat ik tot nu toe had staan besproken met (naam docent). Hij gaf aan dat het goed is dat ik nog niet met de stying ben begonnen, maar dat ik wel moest beginnen aan het enhancen van het formulier omdat ik een beetje achter liep. Hij gaf mij de tip om mijn javascript op te gaan delen in verschillende files omdat ik van plan ben het eerste hoofdstuk vraag voor vraag te displayen en dat wordt best wel wat javascript.
 
 ## week 2
 
 ### maandag 2 februari
 later aanwezig ivm rijles
 
-wat heb ik vandaag gedaan? -> 
+wat heb ik vandaag gedaan? -> Vandaag was ik om 12 uur aanwezig ivm mijn rijles. Omdat ik morgen door mijn rijexamen niet aanwezig ben had ik in de vakantie al een beetje vooruitgewerkt en een beginnetje gemaakt aan mijn javascript. Ik had al voor elkaar dat de vragen van hoofdstuk 1 een voor een displayed werden. Vandaag ben ik begonnen met condities opstellen voor welke vraag er als volgende displayed wordt en daarna gestart met de validatie van hoofdstuk 1. Ik wilde namelijk bij het verlaten van een input field subtiele feedback (rode of groene border) en bij klikken op "volgende" meer uitgebreide feedback van wat er in dat input field van de gebruiker verwacht wordt. Toen ik daarmee klaar was realiseerde ik mij dat ik was vergeten mijn javascript in verschillende files te splitsen. Gelukkig heb ik tijdens mijn stage ook met gesplitste js files gewerkt dus wist ik ongeveer hoe ik dat moest opbouwen. Aangezien ik de weekly geek morgen mis ivm het rijexamen (en die dus toch al moet herkansen) heb ik daar vandaag geen tijd aan besteed en alleen aan mijn website gewerkt. Dit alles heb ik tijdens de check out besproken met ...
 
-hoelang heb ik daarover gedaan? -> 
+hoelang heb ik daarover gedaan? -> Ik heb van 12 tot half 4 aan de javascript enhancement gewerkt (3,5 uur) en daarna in een half uur mijn javascript in 4 files gesplitst.
 
-wat heb ik geleerd? -> 
+wat heb ik geleerd? -> Ik heb mij vooral verdiept in validatie met javascript (conditioneel toevoegen van required element en error messages) en mijn kennis opgefrist over de opbouw van gesplitste javascript files.
 
-wat ga ik morgen doen? -> 
+wat ga ik morgen doen? -> Morgen ben ik ivm het rijexamen niet aanwezig maar ga ik thuis beginnen met het enhancen van hoofdstuk 2 en daar een pattern aan toe te voegen.
 
 
 ### dinsdag 3 februari
-later aanwezig ivm rijexamen
+niet aanwezig ivm rijexamen
 
 wat heb ik vandaag gedaan? -> 
 
@@ -56,8 +60,9 @@ wat ga ik de volgende keer doen? ->
 
 
 ### weekvoortgang
-
-
+Javascript files opsplitsen:
+<img width="372" height="113" alt="Scherm­afbeelding 2026-03-02 om 13 49 22" src="https://github.com/user-attachments/assets/81905b42-62e6-42ff-8085-60c1222519c1" />
+<img width="337" height="132" alt="Scherm­afbeelding 2026-03-02 om 13 49 31" src="https://github.com/user-attachments/assets/88d9cf4b-259e-40d1-9cb2-8b7f5e42ceba" />
 
 ## week 3
 
