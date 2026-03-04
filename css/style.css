@@ -1,3 +1,37 @@
 h1 {
     color: red;
 }
+
+/* validation */
+input {
+    border: 2px solid #ccc; 
+}
+
+input.is-validated:invalid {
+    border-color: #d32f2f; /* Rood */
+}
+
+input.is-validated:valid {
+    border-color: #2e7d32; /* Groen */
+}
+
+/* --- Zichtbaarheid (Stepper) --- */
+.is-hidden {
+    display: none !important;
+}
+
+/* --- Typografie voor de feedback berichten --- */
+.feedback-msg {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 4px; /* Kleine ruimte tussen input en tekst */
+}
+
+/* Specifieke kleuren per type melding */
+.error-msg {
+    color: #d32f2f; /* Rood */
+}
+
+.success-msg {
+    color: #2e7d32; /* Groen */
+}
