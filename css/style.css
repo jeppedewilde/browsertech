@@ -1,37 +1,357 @@
+:root {
+    color-scheme: light dark;
+    /* ==========================================
+    TRACTIE FUNDAMENTALS - NS DESIGN SYSTEM
+       ========================================== */
+
+    /* KLEUREN */
+    /* De NS kleuren */
+    --color-brand-primary: light dark (#ffc60f,#0b3680); 
+
+    /* Achtergrondkleuren */
+    --color-background-default: light-dark(#ffffff,#0d0e10); 
+    --color-background-interactive-default: light-dark(#0162d1,#5d9fea);
+    --color-background-emphasis-primary: light-dark(#ebf5ff,#1f2c42);
+    --color-background-hover: light-dark(#0b44a1,#9ac5f1);
+
+    /* Tekstkleuren */
+    --color-content-default: light-dark(#252528,#c4c5cb);
+    --color-content-interactive-default: light-dark(#ffffff,#0b44a1);
+    --color-content-emphasis: light-dark(#0b3680,#e4e5e8); 
+    --color-content-subtle: light-dark(#73747a,#979798);
+
+    /* Borderkleuren */
+    --color-border-default: light-dark(#e4e5e8,#343536); 
+    --color-border-input: light-dark(#919197,#757677);
+    --color-border-input-hover: light-dark(#73747a,#979798);
+    --color-border-hover: light-dark(#0b44a1,#9ac5f1); 
+    --color-border-focus: light-dark(#0162d1,#5d9fea); 
+    --color-border-success: light-dark(#3e7f67,#4dcda5);
+    --color-border-warning: light-dark(#f05c01,#ff9545);
+    --color-border-error: light-dark(#ce092d,#ff9396);
+
+    /* Validatiekleuren */
+    --color-status-error: #d32f2f;
+    --color-status-success: #2e7d32; 
+
+    /* --- TYPOGRAFIE --- */
+    --font-size-h1: 28px;
+    --font-size-h2: 24px;
+    --font-size-xs: 0.75rem;
+    --font-size-s: 0.875rem;
+    --font-size-m: 1rem;
+    --font-size-l: clamp(1rem, 0.9167rem + 0.2778vi, 1.125rem);
+    --font-size-xl: clamp(1.125rem, 1.0417rem + 0.2778vi, 1.25rem);
+    --font-size-xxl: clamp(1.25rem, 1.0833rem + 0.5556vi, 1.5rem);
+    --font-size-xxxl: clamp(1.375rem, 1.125rem + 0.8333vi, 1.75rem);
+
+    /* Font weights */
+    --font-weight-regular: 400; 
+    --font-weight-medium: 500; 
+    --font-weight-bold: 700;   
+
+    /* Line-heights */
+    --line-height-body: 1.5;    
+    --line-height-heading: 1.25;
+
+    /* --- SPATIËRING --- */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    --spacing-gap-s: 8px; /* horizontaal */
+    --spacing-gap-m: 16px; /* verticaal */
+
+    /* --- BORDERS --- */
+    --border-radius-sm: 4px; 
+    --border-radius-default: 6px; 
+    
+    --border-width-thin: 1px;
+    --border-width-medium: 2px; 
+    --border-width-thick: 4px;
+}
+
+@font-face {
+    font-family: nssans-regular;
+    src: url(/fonts/nssans-regular.woff2);
+}
+
+@font-face {
+    font-family: nssans-bold;
+    src: url(/fonts/nssans-bold.woff2);
+}
+
+/* STYLING */
+/* basis opmaak */
+body {
+    font-family: nssans-regular, sans-serif; 
+    background-color: var(--color-background-default);
+    color: var(--color-content-default);
+    line-height: var(--line-height-body);
+    font-size: var(--font-size-m);
+    margin: 0;
+    padding: var(--spacing-lg);
+}
+
 h1 {
-    color: red;
+    font-size: var(--font-size-h1);
+    color: var(--color-content-emphasis);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
 }
 
-/* validation */
-input {
-    border: 2px solid #ccc; 
+h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-content-emphasis);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    cursor: pointer;
 }
 
-input.is-validated:invalid {
-    border-color: #d32f2f; /* Rood */
+p {
+    color: var(--color-content-subtle);
 }
 
-input.is-validated:valid {
-    border-color: #2e7d32; /* Groen */
+/* formulieren */
+.form-chapter {
+    margin-bottom: var(--spacing-xl);
 }
 
-/* --- Zichtbaarheid (Stepper) --- */
-.is-hidden {
-    display: none !important;
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg) 0;
 }
 
-/* --- Typografie voor de feedback berichten --- */
-.feedback-msg {
+legend {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-content-emphasis);
+    margin-bottom: var(--spacing-md);
+    padding: 0;
+    width: 100%;
+}
+
+/* inputs & labels */
+label {
     display: block;
-    font-size: 0.9em;
-    margin-top: 4px; /* Kleine ruimte tussen input en tekst */
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-content-default);
 }
 
-/* Specifieke kleuren per type melding */
-.error-msg {
-    color: #d32f2f; /* Rood */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    max-width: 400px; 
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-m);
+    
+    background-color: var(--color-background-emphasis-primary);
+    color: var(--color-content-default);
+    
+    border: var(--border-width-medium) solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.success-msg {
-    color: #2e7d32; /* Groen */
+/* focus state */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--color-border-focus);
+    box-shadow: 0 0 0 3px var(--color-brand-primary);
+}
+
+/* radiobuttons & checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0 var(--spacing-sm) var(--spacing-sm) 0;
+    cursor: pointer;
+    /* Een moderne trick om de kleur van standaard vinkjes aan te passen! */
+    accent-color: var(--color-brand-primary); 
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline-block;
+    font-weight: var(--font-weight-regular); 
+    margin-bottom: var(--spacing-sm);
+    margin-right: var(--spacing-md);
+    cursor: pointer;
+}
+
+/* buttons */
+button[type="submit"] {
+    background-color: var(--color-background-interactive-default);
+    color: var(--color-content-interactive-default);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-bold);
+    
+    padding: var(--spacing-md) var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    
+    border: none;
+    border-radius: var(--border-radius-default);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-border-hover);
+    color: var(--color-background-default); 
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98); 
+}
+
+button[type="submit"]:focus {
+    outline: var(--border-width-thick) solid var(--color-border-focus);
+    outline-offset: 2px;
+}
+
+/* buttons stepper navigatie */
+.step-navigation {
+    display: flex;
+    gap: var(--spacing-md); 
+    margin-top: var(--spacing-lg);
+}
+
+.step-navigation button {
+    background-color: var(--color-background-interactive-default);
+    color: var(--color-content-interactive-default);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-bold);
+    
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: var(--border-width-medium) solid var(--color-brand-primary);
+    border-radius: var(--border-radius-default);
+    
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, color 0.2s ease;
+}
+
+.step-navigation button:focus {
+    outline: var(--border-width-thick) solid var(--color-border-focus);
+    outline-offset: 2px;
+}
+
+.step-navigation button:active {
+    transform: scale(0.98);
+}
+
+.step-navigation button:hover {
+    background-color: var(--color-border-hover);
+    border-color: var(--color-border-hover);
+    color: var(--color-background-default);
+}
+
+/* vorige knop */
+.step-navigation button:first-child:not(:last-child) {
+    background-color: transparent; 
+    border-color: var(--color-border-default); 
+    color: var(--color-content-default);
+}
+
+.step-navigation button:first-child:not(:last-child):hover {
+    background-color: var(--color-border-default);
+    color: var(--color-content-emphasis);
+}
+
+/* validatie meldingen */
+.error-message {
+    color: var(--color-status-error);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-medium);
+    margin-top: calc(var(--spacing-xs) * -1); 
+    margin-bottom: var(--spacing-md);
+    display: block;
+}
+
+input:user-invalid {
+    border: 2px solid var(--color-border-error);
+}
+
+input:user-valid {
+    border: 2px solid var(--color-status-success); 
+}
+
+.is-hidden,
+section.is-hidden,
+fieldset.is-hidden,
+div.is-hidden,
+p.is-hidden {
+    display: none;
+}
+
+
+/* uitklapbaar overzicht */
+.form-chapter.is-finished .chapter-title {
+    color: var(--color-brand-secondary);
+    text-decoration: underline;
+    transition: color 1s;
+}
+
+.form-chapter.is-finished .chapter-title:hover {
+    color: var(--color-brand-primary);
+}
+
+.form-chapter.is-finished .chapter-content .step.is-hidden {
+    display: block;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border-default);
+}
+
+.form-chapter.is-finished .chapter-content .step {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border-default);
+}
+
+/* verberg vorige/volgende knoppen */
+.form-chapter.is-finished .chapter-content div.step-navigation {
+    display: none;
+}
+
+
+/* styling overzicht */
+.form-chapter.is-finished .chapter-content .step {
+    display: grid !important;
+    grid-template-columns: 200px 1fr; 
+    align-items: center; 
+    row-gap: var(--spacing-sm);
+    column-gap: var(--spacing-md);
+}
+
+.form-chapter.is-finished .chapter-content .step legend {
+    grid-column: 1 / -1; 
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-chapter.is-finished .step label,
+.form-chapter.is-finished .step input {
+    margin-bottom: 0; 
+}
+
+.form-chapter.is-finished .step input[type="text"],
+.form-chapter.is-finished .step input[type="date"],
+.form-chapter.is-finished .step input[type="number"],
+.form-chapter.is-finished .step input[type="email"],
+.form-chapter.is-finished .step input[type="tel"] {
+    background-color: transparent;
+    border-color: var(--color-border-default);
+    color: var(--color-content-subtle);
 }

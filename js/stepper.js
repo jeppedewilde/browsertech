@@ -1,53 +1,102 @@
-// =======================================================================================
-// ------------------------------------ js/stepper.js ------------------------------------
-// initStepper, createNavigationButtons, goToStep, finishStepper, updateChapterVisibility.
-// =======================================================================================
+// ============================================================================
+// ----------------------------- js/stepper.js ------------------------------
+// ============================================================================
 
 import { validateCurrentStep } from './validation.js';
 import { determineNextStep } from './conditions.js';
 
 export function initializeStepper() {
     const steps = document.querySelectorAll('form .step');
+    if (!steps.length) return; 
+
     let currentStepIndex = 0;
     let stepHistory = []; 
 
-    if (steps.length === 0) return;
+    // ------------------------------------------------------------------------
+    // --- HULPFUNCTIES ---
+    // ------------------------------------------------------------------------
 
-    function initStepper() {
-        steps.forEach((step, index) => {
-            if (index !== currentStepIndex) {
-                step.classList.add('is-hidden');
-            } else {
-                step.classList.remove('is-hidden');
-            }
-            createNavigationButtons(step, index);
+    const createButton = (text, onClick) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = text;
+        btn.addEventListener('click', onClick);
+        return btn;
+    };
+
+    const setFocus = (element) => {
+        if (element) {
+            element.setAttribute('tabindex', '-1');
+            element.focus();
+        }
+    };
+
+    const updateChapterVisibility = () => {
+        const currentChapter = steps[currentStepIndex].closest('.form-chapter');
+        document.querySelectorAll('.form-chapter').forEach(chapter => {
+            chapter.classList.toggle('is-hidden', chapter !== currentChapter);
         });
-        updateChapterVisibility();
-    }
+    };
 
-    function createNavigationButtons(stepElement, index) {
+    // ------------------------------------------------------------------------
+    // --- NAVIGATIE LOGICA ---
+    // ------------------------------------------------------------------------
+
+    const goToStep = (newIndex) => {
+        steps[currentStepIndex].classList.add('is-hidden'); 
+        currentStepIndex = newIndex; 
+        steps[currentStepIndex].classList.remove('is-hidden'); 
+        
+        updateChapterVisibility();
+        setFocus(steps[currentStepIndex].querySelector('legend'));
+    };
+
+const finishStepper = () => {
+        const stepperChapter = steps[0].closest('.form-chapter'); // Dit is Hoofdstuk 1
+        const allChapters = document.querySelectorAll('.form-chapter');
+        
+        // 1. Geef Hoofdstuk 1 de 'is-finished' status (jouw CSS doet nu de rest voor de stappen!)
+        stepperChapter.classList.add('is-finished');
+        
+        // 2. Verberg niet het HELE hoofdstuk, maar alleen het 'doosje' met de vragen erin
+        const content = stepperChapter.querySelector('.chapter-content');
+        if (content) {
+            content.classList.add('is-hidden');
+        }
+        
+        // 3. Zorg dat de sectie zelf zichtbaar blijft (zodat we de <h2> nog zien)
+        stepperChapter.classList.remove('is-hidden');
+
+        // 4. Laat alle overige hoofdstukken (Hoofdstuk 2) netjes in beeld verschijnen
+        allChapters.forEach(chapter => {
+            if (chapter !== stepperChapter) {
+                chapter.classList.remove('is-hidden');
+            }
+        });
+
+        // 5. Zet de focus netjes op de titel van Hoofdstuk 2 voor schermlezers
+        if (allChapters.length > 1 && allChapters[1]) {
+            setFocus(allChapters[1].querySelector('h2'));
+        }
+    };
+
+    // ------------------------------------------------------------------------
+    // --- INITIALISATIE ---
+    // ------------------------------------------------------------------------
+
+    steps.forEach((step, index) => {
+        step.classList.toggle('is-hidden', index !== currentStepIndex);
+
         const btnContainer = document.createElement('div');
-        btnContainer.classList.add('step-navigation');
+        btnContainer.className = 'step-navigation';
 
         if (index > 0) {
-            const prevBtn = document.createElement('button');
-            prevBtn.type = 'button';
-            prevBtn.textContent = 'Vorige';
-            prevBtn.addEventListener('click', () => {
-                const previousIndex = stepHistory.pop(); 
-                goToStep(previousIndex);
-            });
-            btnContainer.appendChild(prevBtn);
+            btnContainer.appendChild(createButton('Vorige', () => goToStep(stepHistory.pop())));
         }
 
-        const nextBtn = document.createElement('button');
-        nextBtn.type = 'button';
-        nextBtn.textContent = 'Volgende';
-        nextBtn.addEventListener('click', () => {
-            
+        btnContainer.appendChild(createButton('Volgende', () => {
             if (validateCurrentStep(steps[currentStepIndex])) {
-                // LET OP: we sturen steps.length nu mee
-                let nextIndex = determineNextStep(currentStepIndex, steps.length);
+                const nextIndex = determineNextStep(currentStepIndex, steps.length);
                 
                 if (nextIndex >= steps.length) {
                     finishStepper();
@@ -56,55 +105,10 @@ export function initializeStepper() {
                     goToStep(nextIndex);
                 }
             }
-        });
-        btnContainer.appendChild(nextBtn);
+        }));
 
-        stepElement.appendChild(btnContainer);
-    }
+        step.appendChild(btnContainer);
+    });
 
-    function goToStep(newIndex) {
-        steps[currentStepIndex].classList.add('is-hidden');
-        currentStepIndex = newIndex;
-        steps[currentStepIndex].classList.remove('is-hidden');
-        
-        updateChapterVisibility();
-
-        const currentLegend = steps[currentStepIndex].querySelector('legend');
-        if (currentLegend) {
-            currentLegend.setAttribute('tabindex', '-1');
-            currentLegend.focus();
-        }
-    }
-
-    function finishStepper() {
-        const chapter1 = steps[0].closest('.form-chapter');
-        if (chapter1) chapter1.classList.add('is-hidden');
-
-        const allChapters = document.querySelectorAll('.form-chapter');
-        allChapters.forEach((chapter, index) => {
-            if (index > 0) chapter.classList.remove('is-hidden');
-        });
-
-        if (allChapters[1]) {
-            const chapter2Title = allChapters[1].querySelector('h2');
-            if (chapter2Title) {
-                chapter2Title.setAttribute('tabindex', '-1');
-                chapter2Title.focus();
-            }
-        }
-    }
-
-    function updateChapterVisibility() {
-        document.querySelectorAll('.form-chapter').forEach(chapter => {
-            chapter.classList.add('is-hidden');
-        });
-        
-        const currentStep = steps[currentStepIndex];
-        const currentChapter = currentStep.closest('.form-chapter');
-        if (currentChapter) {
-            currentChapter.classList.remove('is-hidden');
-        }
-    }
-
-    initStepper();
+    updateChapterVisibility(); 
 }

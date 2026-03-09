@@ -16,210 +16,217 @@
     </header>
     <main>
         <form>
-            <section class="form-chapter">
-                <h2>Gegevens van de overledene</h2>
-                <fieldset class="step">
-                    <legend>Persoonsgegevens overledene</legend>
-                    <label for="initials-deceased">Voorletter(s)</label>
-                    <input type="text" id="initials-deceased" name="initials" required>
-                    <label for="infix-deceased">Tussenvoegsel(s)</label>
-                    <input type="text" id="infix-deceased" name="infix">
-                    <label for="lname-deceased">Achternaam</label>
-                    <input type="text" id="lname-deceased" name="last name" required>
-                    <label for="bsn">Bsn overledene</label>
-                    <input type="text" id="bsn" name="bsn" pattern="[0-9]{9}" required>
-                    <label for="date-death">Overlijdensdatum</label>
-                    <input type="date" id="date-death" name="date of death" required>
-                </fieldset>
-                <fieldset class="step">
-                    <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van
-                        overlijden?</legend>
-                    <input type="radio" id="married" name="relationship" value="married" required>
-                    <label for="married">Ja</label>
-                    <input type="radio" id="not-married" name="relationship" value="not-married" required>
-                    <label for="not-married">Nee</label>
-                </fieldset>
-                <fieldset class="step">
-                    <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of
-                        partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
-                    <input type="radio" id="conditions" name="conditions" value="conditions">
-                    <label for="conditions">Ja</label>
-                    <input type="radio" id="no-conditions" name="conditions" value="no-conditions">
-                    <label for="no-conditions">Nee</label>
-                </fieldset>
-                <fieldset class="step">
-                    <legend>Hadden de overledene en diens partner een finaalverrekenbeding?</legend>
-                    <input type="radio" id="final-settlement" name="final-settlement" value="final-settlement">
-                    <label for="final-settlement">Ja</label>
-                    <input type="radio" id="no-final-settlement" name="final-settlement" value="no-final-settlement">
-                    <label for="no-final-settlement">Nee</label>
-                </fieldset>
-                <fieldset class="step">
-                    <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
-                    <label for="date-conditions">Datum huwelijkse of partnerschapsvoorwaarden</label>
-                    <input type="date" id="date-conditions" name="date conditions">
-                </fieldset>
-                <fieldset class="step">
-                    <legend>Had de overledene kinderen?</legend>
-                    <input type="radio" id="children" name="children" value="children" required>
-                    <label for="children">Ja</label>
-                    <input type="radio" id="no-children" name="children" value="no-children" required>
-                    <label for="no-children">Nee</label>
-                </fieldset>
-                <fieldset class="step">
-                    <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
-                    </legend>
-                    <input type="radio" id="child-deceased" name="child-deceased" value="child-deceased">
-                    <label for="child-deceased">Ja</label>
-                    <input type="radio" id="no-child-deceased" name="child-deceased" value="no-child-deceased">
-                    <label for="no-child-deceased">Nee</label>
-                </fieldset>
-                <fieldset class="step">
-                    <legend>Had dit overleden kind zelf kinderen?</legend>
-                    <input type="radio" id="child-has-children" name="child-has-children" value="child-has-children">
-                    <label for="child-has-children">Ja</label>
-                    <input type="radio" id="child-no-children" name="child-has-children" value="child-no-children">
-                    <label for="child-no-children">Nee</label>
-                </fieldset>
-                <fieldset class="step">
-                    <legend>Had de overledene een testament?</legend>
-                    <input type="radio" id="testament" name="testament" value="testament" required>
-                    <label for="testament">Ja</label>
-                    <input type="radio" id="no-testament" name="testament" value="no-testament" required>
-                    <label for="no-testament">Nee</label>
-                </fieldset>
-                <fieldset class="step">
-                    <legend>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het
-                        testament</legend>
-                    <label for="protocol-number">Protocolnummer notaris</label>
-                    <input type="text" id="protocol-number" name="protocol-number">
-                    <label for="initials-notary">Voorletter(s)</label>
-                    <input type="text" id="initials-notary" name="initials">
-                    <label for="infix-notary">Tussenvoegsel(s)</label>
-                    <input type="text" id="infix-notary" name="infix">
-                    <label for="lname-notary">Achternaam</label>
-                    <input type="text" id="lname-notary" name="last-name">
-                    <label for="location">Vestigingsplaats</label>
-                    <input type="text" id="location" name="location">
-                    <legend>Datum van het testament of van de laatste wijziging</legend>
-                    <!-- <label for="day-changes">Dag</label>
-                    <input type="text" id="day-changes" name="day" pattern="[0-9]{1,2}">
-                    <label for="month-changes">Maand</label>
-                    <input type="text" id="month-changes" name="month" pattern="[0-9]{1,2}">
-                    <label for="year-changes">Jaar</label>
-                    <input type="text" id="year-changes" name="year" pattern="[0-9]{4}"> -->
-                    <label for="date-changes">Datum</label>
-                    <input type="date" id="date-changes" name="date-changes">
-                </fieldset>
+            <section id="chapter-1" class="form-chapter">
+                <h2 class="chapter-title">Gegevens van de overledene</h2>
+                <div class="chapter-content">
+                    <fieldset class="step">
+                        <legend>Persoonsgegevens overledene</legend>
+                        <label for="initials-deceased">Voorletter(s)</label>
+                        <input type="text" id="initials-deceased" name="initials" required>
+                        <label for="infix-deceased">Tussenvoegsel(s)</label>
+                        <input type="text" id="infix-deceased" name="infix">
+                        <label for="lname-deceased">Achternaam</label>
+                        <input type="text" id="lname-deceased" name="last name" required>
+                        <label for="bsn">Bsn overledene</label>
+                        <input type="text" id="bsn" name="bsn" pattern="[0-9]{9}" required aria-describedby="error-bsn">
+                        <p id="error-bsn" class="error-message is-hidden">Vul een geldig BSN in van 9 cijfers.</p>
+                        <label for="date-death">Overlijdensdatum</label>
+                        <input type="date" id="date-death" name="date of death" required>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van
+                            overlijden?</legend>
+                        <input type="radio" id="married" name="relationship" value="married" required aria-describedby="error-married">
+                        <label for="married">Ja</label>
+                        <input type="radio" id="not-married" name="relationship" value="not-married" required aria-describedby="error-married">
+                        <label for="not-married">Nee</label>
+                        <p id="error-married" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of
+                            partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
+                        <input type="radio" id="conditions" name="conditions" value="conditions" aria-describedby="error-conditions">
+                        <label for="conditions">Ja</label>
+                        <input type="radio" id="no-conditions" name="conditions" value="no-conditions" aria-describedby="error-conditions">
+                        <label for="no-conditions">Nee</label>
+                        <p id="error-conditions" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Hadden de overledene en diens partner een finaalverrekenbeding?</legend>
+                        <input type="radio" id="final-settlement" name="final-settlement" value="final-settlement" aria-describedby="error-settlement">
+                        <label for="final-settlement">Ja</label>
+                        <input type="radio" id="no-final-settlement" name="final-settlement" value="no-final-settlement" aria-describedby="error-settlement">
+                        <label for="no-final-settlement">Nee</label>
+                        <p id="error-settlement" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
+                        <label for="date-conditions">Datum huwelijkse of partnerschapsvoorwaarden</label>
+                        <input type="date" id="date-conditions" name="date conditions">
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Had de overledene kinderen?</legend>
+                        <input type="radio" id="children" name="children" value="children" required aria-describedby="error-children">
+                        <label for="children">Ja</label>
+                        <input type="radio" id="no-children" name="children" value="no-children" required aria-describedby="error-children">
+                        <label for="no-children">Nee</label>
+                        <p id="error-children" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                        </legend>
+                        <input type="radio" id="child-deceased" name="child-deceased" value="child-deceased" aria-describedby="error-deceased">
+                        <label for="child-deceased">Ja</label>
+                        <input type="radio" id="no-child-deceased" name="child-deceased" value="no-child-deceased" aria-describedby="error-deceased">
+                        <label for="no-child-deceased">Nee</label>
+                        <p id="error-deceased" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Had dit overleden kind zelf kinderen?</legend>
+                        <input type="radio" id="child-has-children" name="child-has-children" value="child-has-children" aria-describedby="error-child-children">
+                        <label for="child-has-children">Ja</label>
+                        <input type="radio" id="child-no-children" name="child-has-children" value="child-no-children" aria-describedby="error-child-children">
+                        <label for="child-no-children">Nee</label>
+                        <p id="error-child-children" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Had de overledene een testament?</legend>
+                        <input type="radio" id="testament" name="testament" value="testament" required aria-describedby="error-testament">
+                        <label for="testament">Ja</label>
+                        <input type="radio" id="no-testament" name="testament" value="no-testament" required aria-describedby="error-testament">
+                        <label for="no-testament">Nee</label>
+                        <p id="error-testament" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                    </fieldset>
+                    <fieldset class="step">
+                        <legend>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het
+                            testament</legend>
+                        <label for="protocol-number">Protocolnummer notaris</label>
+                        <input type="text" id="protocol-number" name="protocol-number">
+                        <label for="initials-notary">Voorletter(s)</label>
+                        <input type="text" id="initials-notary" name="initials">
+                        <label for="infix-notary">Tussenvoegsel(s)</label>
+                        <input type="text" id="infix-notary" name="infix">
+                        <label for="lname-notary">Achternaam</label>
+                        <input type="text" id="lname-notary" name="last-name">
+                        <label for="location">Vestigingsplaats</label>
+                        <input type="text" id="location" name="location" aria-describedby="error-location">
+                        <p id="error-location" class="error-message is-hidden">Vul een geldige locatie in.</p>
+                        <legend>Datum van het testament of van de laatste wijziging</legend>
+                        <label for="date-changes">Datum</label>
+                        <input type="date" id="date-changes" name="date-changes">
+                    </fieldset>
+                </div>
             </section>
-            <section class="form-chapter">
-                <h2>Gegevens gemachtigde</h2>
-                
-                <fieldset>
-                    <legend>Persoonsgegevens gemachtigde</legend>
+            <section id="chapter-2" class="form-chapter">
+                <h2 class="chapter-title">Gegevens gemachtigde</h2>
+                <div class="chapter-content">
 
                     <fieldset>
-                        <legend>Welk identificatienummer wilt u opgeven?</legend>
-                        <input type="radio" id="id-type-bsn" name="id-type" value="bsn" checked>
-                        <label for="id-type-bsn">Bsn/RSIN</label>
+                        <legend>Persoonsgegevens gemachtigde</legend>
 
-                        <input type="radio" id="id-type-becon" name="id-type" value="becon">
-                        <label for="id-type-becon">Beconnummer</label>
+                        <fieldset>
+                            <legend>Welk identificatienummer wilt u opgeven?</legend>
+                            <input type="radio" id="id-type-bsn" name="id-type" value="bsn" checked>
+                            <label for="id-type-bsn">Bsn/RSIN</label>
 
-                        <input type="radio" id="id-type-protocol" name="id-type" value="protocol">
-                        <label for="id-type-protocol">Protocolnummer notaris</label>
+                            <input type="radio" id="id-type-becon" name="id-type" value="becon">
+                            <label for="id-type-becon">Beconnummer</label>
+
+                            <input type="radio" id="id-type-protocol" name="id-type" value="protocol">
+                            <label for="id-type-protocol">Protocolnummer notaris</label>
+                        </fieldset>
+
+                        <div id="wrapper-bsn">
+                            <label for="bsn-rsin">Bsn/RSIN gemachtigde</label>
+                            <input type="text" id="bsn-rsin" name="bsn-rsin" pattern="[0-9]{9}">
+                        </div>
+
+                        <div id="wrapper-becon">
+                            <label for="becon-number">Beconnummer adviseur</label>
+                            <input type="text" id="becon-number" name="becon-number" pattern="[0-9]{9}">
+                        </div>
+
+                        <div id="wrapper-protocol">
+                            <label for="protocol-number2">Protocolnummer notaris</label>
+                            <input type="text" id="protocol-number2" name="protocol-number2">
+                        </div>
+
+                        <label for="initials-authorized">Voorletter(s)</label>
+                        <input type="text" id="initials-authorized" name="initials" required>
+
+                        <label for="infix-authorized">Tussenvoegsel(s)</label>
+                        <input type="text" id="infix-authorized" name="infix">
+
+                        <label for="lname-authorized">Achternaam</label>
+                        <input type="text" id="lname-authorized" name="last-name" required>
+
+                        <label for="institution">Naam instelling (bijvoorbeeld notarisbureau)</label>
+                        <input type="text" id="institution" name="institution" required>
                     </fieldset>
-
-                    <div id="wrapper-bsn">
-                        <label for="bsn-rsin">Bsn/RSIN gemachtigde</label>
-                        <input type="text" id="bsn-rsin" name="bsn-rsin" pattern="[0-9]{9}">
-                    </div>
-
-                    <div id="wrapper-becon">
-                        <label for="becon-number">Beconnummer adviseur</label>
-                        <input type="text" id="becon-number" name="becon-number" pattern="[0-9]{9}">
-                    </div>
-
-                    <div id="wrapper-protocol">
-                        <label for="protocol-number2">Protocolnummer notaris</label>
-                        <input type="text" id="protocol-number2" name="protocol-number2">
-                    </div>
-
-                    <label for="initials-authorized">Voorletter(s)</label>
-                    <input type="text" id="initials-authorized" name="initials" required>
-                    
-                    <label for="infix-authorized">Tussenvoegsel(s)</label>
-                    <input type="text" id="infix-authorized" name="infix">
-                    
-                    <label for="lname-authorized">Achternaam</label>
-                    <input type="text" id="lname-authorized" name="last-name" required>
-
-                    <label for="institution">Naam instelling (bijvoorbeeld notarisbureau)</label>
-                    <input type="text" id="institution" name="institution" required>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Adresgegevens gemachtigde</legend>
 
                     <fieldset>
-                        <legend>Waar woont de gemachtigde?</legend>
-                        <input type="radio" id="residence-nl" name="residence-type" value="nl" checked>
-                        <label for="residence-nl">In Nederland</label>
+                        <legend>Adresgegevens gemachtigde</legend>
 
-                        <input type="radio" id="residence-abroad" name="residence-type" value="abroad">
-                        <label for="residence-abroad">In het buitenland</label>
+                        <fieldset>
+                            <legend>Waar woont de gemachtigde?</legend>
+                            <input type="radio" id="residence-nl" name="residence-type" value="nl" checked>
+                            <label for="residence-nl">In Nederland</label>
+
+                            <input type="radio" id="residence-abroad" name="residence-type" value="abroad">
+                            <label for="residence-abroad">In het buitenland</label>
+                        </fieldset>
+
+                        <div id="address-nl-wrapper">
+                            <p><em>Vul dit adres in als de gemachtigde in Nederland woont.</em></p>
+
+                            <label for="street">Straat</label>
+                            <input type="text" id="street" name="street">
+
+                            <label for="house-number">Huisnummer</label>
+                            <input type="text" id="house-number" name="house-number">
+
+                            <label for="addition">Huisnummertoevoeging</label>
+                            <input type="text" id="addition" name="addition">
+
+                            <label for="postal-code">Postcode</label>
+                            <input type="text" id="postal-code" name="postal-code">
+
+                            <label for="city">Plaats</label>
+                            <input type="text" id="city" name="city">
+                        </div>
+
+                        <div id="address-abroad-wrapper">
+                            <p><em>Vul dit adres in als de gemachtigde in het buitenland woont.</em></p>
+
+                            <label for="street-abroad">Straat</label>
+                            <input type="text" id="street-abroad" name="street-abroad">
+
+                            <label for="house-number-abroad">Huisnummer</label>
+                            <input type="text" id="house-number-abroad" name="house-number-abroad">
+
+                            <label for="postal-code-abroad">Postcode</label>
+                            <input type="text" id="postal-code-abroad" name="postal-code-abroad">
+
+                            <label for="city-abroad">Plaats</label>
+                            <input type="text" id="city-abroad" name="city-abroad">
+
+                            <label for="country-code">Landcode</label>
+                            <input type="text" id="country-code" name="country-code">
+                        </div>
                     </fieldset>
 
-                    <div id="address-nl-wrapper">
-                        <p><em>Vul dit adres in als de gemachtigde in Nederland woont.</em></p>
+                    <fieldset>
+                        <legend>Contactinformatie</legend>
 
-                        <label for="street">Straat</label>
-                        <input type="text" id="street" name="street">
+                        <label for="phone-number">Telefoonnummer</label>
+                        <input type="tel" id="phone-number" name="phone-number" required>
 
-                        <label for="house-number">Huisnummer</label>
-                        <input type="text" id="house-number" name="house-number">
-
-                        <label for="addition">Huisnummertoevoeging</label>
-                        <input type="text" id="addition" name="addition">
-
-                        <label for="postal-code">Postcode</label>
-                        <input type="text" id="postal-code" name="postal-code">
-
-                        <label for="city">Plaats</label>
-                        <input type="text" id="city" name="city">
-                    </div>
-
-                    <div id="address-abroad-wrapper">
-                        <p><em>Vul dit adres in als de gemachtigde in het buitenland woont.</em></p>
-
-                        <label for="street-abroad">Straat</label>
-                        <input type="text" id="street-abroad" name="street-abroad">
-
-                        <label for="house-number-abroad">Huisnummer</label>
-                        <input type="text" id="house-number-abroad" name="house-number-abroad">
-
-                        <label for="postal-code-abroad">Postcode</label>
-                        <input type="text" id="postal-code-abroad" name="postal-code-abroad">
-
-                        <label for="city-abroad">Plaats</label>
-                        <input type="text" id="city-abroad" name="city-abroad">
-
-                        <label for="country-code">Landcode</label>
-                        <input type="text" id="country-code" name="country-code">
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Contactinformatie</legend>
-
-                    <label for="phone-number">Telefoonnummer</label>
-                    <input type="tel" id="phone-number" name="phone-number" required>
-
-                    <label for="email">E-mailadres</label>
-                    <input type="email" id="email" name="email" required>
-                </fieldset>
+                        <label for="email">E-mailadres</label>
+                        <input type="email" id="email" name="email" required>
+                    </fieldset>
+                </div>
             </section>
-            <section class="form-chapter">
+            <!-- <section class="form-chapter">
                 <h2>Voor wie doet u aangifte?</h2>
                 <fieldset>
                     <legend>Informatie verkrijgers</legend>
@@ -244,7 +251,7 @@
                         <input type="number" name="nr-acquirers" pattern="[0-9]{1-4}">
                     </fieldset>
                 </fieldset>
-            </section>
+            </section> -->
             <button type="submit">Verzenden</button>
         </form>
     </main>

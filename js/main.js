@@ -8,12 +8,27 @@ import { initializeStepper } from './stepper.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Zet de logica (required attributen) klaar
+    // required attributen
     setupConditionalRequirements();
     
-    // 2. Zet de validatie (rood/groen kleuren) klaar
+    // validatie
     setupLiveValidation();
     
-    // 3. Start de presentatie (stappen tonen en verbergen)
+    // start stepper
     initializeStepper();
+
+    const chapterTitles = document.querySelectorAll('.chapter-title');
+
+    chapterTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            // zoek <section> waar titel in zit
+            const chapter = title.closest('.form-chapter');
+        
+                // klap  in/uit als het hoofdstuk is afgerond
+                if (chapter.classList.contains('is-finished')) {
+                    const content = chapter.querySelector('.chapter-content');
+                    content.classList.toggle('is-hidden');
+        }
+    });
+});
 });

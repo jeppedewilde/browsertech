@@ -1,30 +1,16 @@
-// ================================================
-// --------------- js/conditions.js ---------------
-// setupConditionalRequirements, determineNextStep.
-// ================================================
+// ============================================================================
+// ---------------------------- js/conditions.js ----------------------------
+// ============================================================================
 
-import {
-    clearMessages
-} from './validation.js';
+import { clearMessages } from './validation.js';
 
 export function setupConditionalRequirements() {
-    const relationshipRadios = document.querySelectorAll('input[name="relationship"]');
-    const childrenRadios = document.querySelectorAll('input[name="children"]');
-    const testamentRadios = document.querySelectorAll('input[name="testament"]');
-
-    function updateRelationshipRequirements() {
-        const isMarriedInput = document.querySelector('input[name="relationship"][value="married"]');
-        const isMarried = isMarriedInput ? isMarriedInput.checked : false;
-
-        const conditionsRadios = document.querySelectorAll('input[name="conditions"]');
-        const settlementRadios = document.querySelectorAll('input[name="final-settlement"]');
-        const dateConditions = document.getElementById('date-conditions');
-
-        const fieldsToUpdate = [...conditionsRadios, ...settlementRadios];
-        if (dateConditions) fieldsToUpdate.push(dateConditions);
-
-        fieldsToUpdate.forEach(el => {
-            if (isMarried) {
+    
+    // --- HOOFDSTUK 1 LOGICA ---
+    const toggleRequired = (isConditionMet, elements) => {
+        elements.forEach(el => {
+            if (!el) return; 
+            if (isConditionMet) {
                 el.setAttribute('required', 'required');
             } else {
                 el.removeAttribute('required');
@@ -32,151 +18,121 @@ export function setupConditionalRequirements() {
                 el.classList.remove('is-validated');
             }
         });
-    }
+    };
 
-    function updateChildrenRequirements() {
-        const hasChildrenInput = document.querySelector('input[name="children"][value="children"]');
-        const hasChildren = hasChildrenInput ? hasChildrenInput.checked : false;
+    const updateConditions = () => {
+        const isMarried = document.querySelector('input[name="relationship"][value="married"]')?.checked;
+        toggleRequired(isMarried, [
+            ...document.querySelectorAll('input[name="conditions"], input[name="final-settlement"]'),
+            document.getElementById('date-conditions')
+        ]);
 
-        const childDeceasedRadios = document.querySelectorAll('input[name="child-deceased"]');
-        const childHasChildrenRadios = document.querySelectorAll('input[name="child-has-children"]');
+        const hasChildren = document.querySelector('input[name="children"][value="children"]')?.checked;
+        toggleRequired(hasChildren, [
+            ...document.querySelectorAll('input[name="child-deceased"], input[name="child-has-children"]')
+        ]);
 
-        const fieldsToUpdate = [...childDeceasedRadios, ...childHasChildrenRadios];
-
-        fieldsToUpdate.forEach(el => {
-            if (hasChildren) {
-                el.setAttribute('required', 'required');
-            } else {
-                el.removeAttribute('required');
-                clearMessages(el);
-                el.classList.remove('is-validated');
-            }
-        });
-    }
-
-    function updateTestamentRequirements() {
-        const hasTestamentInput = document.querySelector('input[name="testament"][value="testament"]');
-        const hasTestament = hasTestamentInput ? hasTestamentInput.checked : false;
-
-        const notaryFields = [
+        const hasTestament = document.querySelector('input[name="testament"][value="testament"]')?.checked;
+        toggleRequired(hasTestament, [
             document.getElementById('protocol-number'),
             document.getElementById('initials-notary'),
             document.getElementById('lname-notary'),
             document.getElementById('location'),
             document.getElementById('date-changes')
-        ];
+        ]);
+    };
 
-        notaryFields.forEach(el => {
-            if (el) {
-                if (hasTestament) {
-                    el.setAttribute('required', 'required');
-                } else {
-                    el.removeAttribute('required');
-                    clearMessages(el);
-                    el.classList.remove('is-validated');
-                }
-            }
-        });
-    }
+    const triggers = document.querySelectorAll('input[name="relationship"], input[name="children"], input[name="testament"]');
+    triggers.forEach(radio => radio.addEventListener('change', updateConditions));
+    updateConditions();
 
-    // =====================================
-    // --- PATTERN: SELECTIVE DISCLOSURE ---
-    // =====================================
+    // --- HOOFDSTUK 2 LOGICA ---
+    const adresRadios = document.querySelectorAll('input[name="residence-type"]');
+    adresRadios.forEach(radio => radio.addEventListener('change', adresWeergave));
 
-    // Een super-slimme herbruikbare functie voor "Toon/Verberg" blokken
-    function setupSelectiveDisclosure(radioName, wrapperMap, exceptions = []) {
-        const radios = document.querySelectorAll(`input[name="${radioName}"]`);
-        if (radios.length === 0) return;
+    const idRadios = document.querySelectorAll('input[name="id-type"]');
+    idRadios.forEach(radio => radio.addEventListener('change', idWeergave));
 
-        function updateVisibility() {
-            // Zoek welke radiobutton NU is geselecteerd
-            const checkedRadio = document.querySelector(`input[name="${radioName}"]:checked`);
-            if (!checkedRadio) return;
-            const selectedValue = checkedRadio.value;
-
-            // Loop door alle wrappers die we hebben doorgegeven
-            for (const [radioValue, wrapperId] of Object.entries(wrapperMap)) {
-                const wrapper = document.getElementById(wrapperId);
-                if (!wrapper) continue;
-
-                if (radioValue === selectedValue) {
-                    // Deze is gekozen: Toon hem en maak de inputs required
-                    wrapper.classList.remove('is-hidden');
-                    setFieldsRequired(wrapper, true, exceptions);
-                } else {
-                    // Deze is niet gekozen: Verberg hem en haal required weg
-                    wrapper.classList.add('is-hidden');
-                    setFieldsRequired(wrapper, false, exceptions);
-                }
-            }
-        }
-
-        // Hulpfunctie om required aan/uit te zetten voor alle inputs in een div
-        function setFieldsRequired(container, isRequired, skipIds) {
-            const inputs = container.querySelectorAll('input');
-            inputs.forEach(input => {
-                // Sla optionele velden (zoals huisnummertoevoeging) over
-                if (skipIds.includes(input.id)) return;
-
-                if (isRequired) {
-                    input.setAttribute('required', 'required');
-                } else {
-                    input.removeAttribute('required');
-                    clearMessages(input); // Geïmporteerd uit validation.js
-                    input.classList.remove('is-validated');
-                }
-            });
-        }
-
-        // Luister naar kliks op de radiobuttons
-        radios.forEach(radio => radio.addEventListener('change', updateVisibility));
-
-        // Draai direct 1 keer bij het inladen
-        updateVisibility();
-    }
-
-    // 1. Start de logica voor de 3 ID-velden (BSN, Becon of Protocol)
-    setupSelectiveDisclosure('id-type', {
-        'bsn': 'wrapper-bsn',
-        'becon': 'wrapper-becon',
-        'protocol': 'wrapper-protocol'
-    });
-
-    // 2. Start de logica voor de Adresvelden (NL of Buitenland)
-    // We geven ['addition'] mee als uitzondering, want een toevoeging is nooit required!
-    setupSelectiveDisclosure('residence-type', {
-        'nl': 'address-nl-wrapper',
-        'abroad': 'address-abroad-wrapper'
-    }, ['addition']);
-
-    relationshipRadios.forEach(radio => radio.addEventListener('change', updateRelationshipRequirements));
-    childrenRadios.forEach(radio => radio.addEventListener('change', updateChildrenRequirements));
-    testamentRadios.forEach(radio => radio.addEventListener('change', updateTestamentRequirements));
-
-    updateRelationshipRequirements();
-    updateChildrenRequirements();
-    updateTestamentRequirements();
+    // Draai ze direct 1 keer bij het laden
+    adresWeergave();
+    idWeergave();
 }
 
+// =====================================
+// --- HOOFDSTUK 2 FUNCTIES ------------
+// =====================================
+
+// Adres Binnenland/Buitenland 
+export function adresWeergave() {
+    const nlRadio = document.getElementById('residence-nl');
+    const nlBlok = document.getElementById('address-nl-wrapper');
+    const buitenlandBlok = document.getElementById('address-abroad-wrapper');
+
+    if (!nlRadio || !nlBlok || !buitenlandBlok) return; // Veiligheidscheck
+
+    const nlVelden = nlBlok.querySelectorAll('input:not(#addition)');
+    const buitenlandVelden = buitenlandBlok.querySelectorAll('input');
+
+    if (nlRadio.checked) {
+        nlBlok.classList.remove('is-hidden');
+        buitenlandBlok.classList.add('is-hidden');
+        nlVelden.forEach(veld => veld.setAttribute('required', 'required'));
+        buitenlandVelden.forEach(veld => veld.removeAttribute('required'));
+    } else {
+        nlBlok.classList.add('is-hidden');
+        buitenlandBlok.classList.remove('is-hidden');
+        nlVelden.forEach(veld => veld.removeAttribute('required'));
+        buitenlandVelden.forEach(veld => veld.setAttribute('required', 'required'));
+    }
+}
+
+// Functie voor BSN / Becon / Protocol switch
+export function idWeergave() {
+    const bsnRadio = document.getElementById('id-type-bsn');
+    const beconRadio = document.getElementById('id-type-becon');
+    
+    const bsnBlok = document.getElementById('wrapper-bsn');
+    const beconBlok = document.getElementById('wrapper-becon');
+    const protocolBlok = document.getElementById('wrapper-protocol');
+
+    const bsnVeld = document.getElementById('bsn-rsin');
+    const beconVeld = document.getElementById('becon-number');
+    const protocolVeld = document.getElementById('protocol-number2');
+
+    bsnBlok.classList.add('is-hidden');
+    beconBlok.classList.add('is-hidden');
+    protocolBlok.classList.add('is-hidden');
+    
+    if(bsnVeld) bsnVeld.removeAttribute('required');
+    if(beconVeld) beconVeld.removeAttribute('required');
+    if(protocolVeld) protocolVeld.removeAttribute('required');
+
+    if (bsnRadio.checked) {
+        bsnBlok.classList.remove('is-hidden');
+        if(bsnVeld) bsnVeld.setAttribute('required', 'required');
+    } else if (beconRadio && beconRadio.checked) {
+        beconBlok.classList.remove('is-hidden');
+        if(beconVeld) beconVeld.setAttribute('required', 'required');
+    } else {
+        protocolBlok.classList.remove('is-hidden');
+        if(protocolVeld) protocolVeld.setAttribute('required', 'required');
+    }
+}
+
+// =====================================
+// --- STEPPER ROUTING LOGIC -----------
+// =====================================
+
 export function determineNextStep(currentIndex, totalSteps) {
-    let nextIndex = currentIndex + 1;
+    const relValue = document.querySelector('input[name="relationship"]:checked')?.value;
+    const conditionsValue = document.querySelector('input[name="conditions"]:checked')?.value;
+    const childValue = document.querySelector('input[name="children"]:checked')?.value;
+    const testValue = document.querySelector('input[name="testament"]:checked')?.value;
 
-    if (currentIndex === 1) {
-        const relationshipAnswer = document.querySelector('input[name="relationship"]:checked');
-        if (relationshipAnswer && relationshipAnswer.value === 'not-married') nextIndex = 5;
-    }
+    if (currentIndex === 1 && relValue === 'not-married') return 5;
+    if (currentIndex === 2 && conditionsValue === 'no-conditions') return 5;
+    if (currentIndex === 5 && childValue === 'no-children') return 8;
+    if (currentIndex === 8 && testValue === 'no-testament') return totalSteps; 
 
-    if (currentIndex === 5) {
-        const childrenAnswer = document.querySelector('input[name="children"]:checked');
-        if (childrenAnswer && childrenAnswer.value === 'no-children') nextIndex = 8;
-    }
-
-    if (currentIndex === 8) {
-        const testamentAnswer = document.querySelector('input[name="testament"]:checked');
-        if (testamentAnswer && testamentAnswer.value === 'no-testament') {
-            nextIndex = totalSteps;
-        }
-    }
-
-    return nextIndex;
+    return currentIndex + 1; 
 }
