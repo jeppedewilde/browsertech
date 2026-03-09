@@ -35,10 +35,10 @@ Tijdens het voortgangsgesprek heb ik wat ik tot nu toe had staan besproken met (
 
 ## week 2
 
-### maandag 2 februari
+### maandag 2 maart
 later aanwezig ivm rijles
 
-wat heb ik vandaag gedaan? -> Vandaag was ik om 12 uur aanwezig ivm mijn rijles. Omdat ik morgen door mijn rijexamen niet aanwezig ben had ik in de vakantie al een beetje vooruitgewerkt en een beginnetje gemaakt aan mijn javascript. Ik had al voor elkaar dat de vragen van hoofdstuk 1 een voor een displayed werden. Vandaag ben ik begonnen met condities opstellen voor welke vraag er als volgende displayed wordt en daarna gestart met de validatie van hoofdstuk 1. Ik wilde namelijk bij het verlaten van een input field subtiele feedback (rode of groene border) en bij klikken op "volgende" meer uitgebreide feedback van wat er in dat input field van de gebruiker verwacht wordt. Toen ik daarmee klaar was realiseerde ik mij dat ik was vergeten mijn javascript in verschillende files te splitsen. Gelukkig heb ik tijdens mijn stage ook met gesplitste js files gewerkt dus wist ik ongeveer hoe ik dat moest opbouwen. Aangezien ik de weekly geek morgen mis ivm het rijexamen (en die dus toch al moet herkansen) heb ik daar vandaag geen tijd aan besteed en alleen aan mijn website gewerkt. Dit alles heb ik tijdens de check out besproken met ...
+wat heb ik vandaag gedaan? -> Vandaag was ik om 12 uur aanwezig ivm mijn rijles. Omdat ik morgen door mijn rijexamen niet aanwezig ben had ik in de vakantie al een beetje vooruitgewerkt en een beginnetje gemaakt aan mijn javascript. Ik had al voor elkaar dat de vragen van hoofdstuk 1 een voor een displayed werden. Vandaag ben ik begonnen met condities opstellen voor welke vraag er als volgende displayed wordt en daarna gestart met de validatie van hoofdstuk 1. Ik wilde namelijk bij het verlaten van een input field subtiele feedback (rode of groene border) en bij klikken op "volgende" meer uitgebreide feedback van wat er in dat input field van de gebruiker verwacht wordt. Toen ik daarmee klaar was realiseerde ik mij dat ik was vergeten mijn javascript in verschillende files te splitsen. Gelukkig heb ik tijdens mijn stage ook met gesplitste js files gewerkt dus wist ik ongeveer hoe ik dat moest opbouwen. Aangezien ik de weekly geek morgen mis ivm het rijexamen (en die dus toch al moet herkansen) heb ik daar vandaag geen tijd aan besteed en alleen aan mijn website gewerkt. Dit alles heb ik tijdens de check out besproken met Maja.
 
 hoelang heb ik daarover gedaan? -> Ik heb van 12 tot half 4 aan de javascript enhancement gewerkt (3,5 uur) en daarna in een half uur mijn javascript in 4 files gesplitst.
 
@@ -47,10 +47,10 @@ wat heb ik geleerd? -> Ik heb mij vooral verdiept in validatie met javascript (c
 wat ga ik morgen doen? -> Morgen ben ik ivm het rijexamen niet aanwezig maar ga ik thuis beginnen met het enhancen van hoofdstuk 2 en daar een pattern aan toe te voegen.
 
 
-### dinsdag 3 februari
+### dinsdag 3 maart
 niet aanwezig ivm rijexamen
 
-wat heb ik vandaag gedaan? -> 
+wat heb ik vandaag gedaan? -> Ik dacht dat ik alles goed had gedaan met het splitsen, maar allerlei foutjes kwamen naar boven en ik heb vanalles heen en weer zitten copy pasten waardoor ik het overzicht zelf eigenlijk niet meer had.
 
 hoelang heb ik daarover gedaan? -> 
 
@@ -64,16 +64,55 @@ Javascript files opsplitsen:
 <img width="372" height="113" alt="Scherm­afbeelding 2026-03-02 om 13 49 22" src="https://github.com/user-attachments/assets/81905b42-62e6-42ff-8085-60c1222519c1" />
 <img width="337" height="132" alt="Scherm­afbeelding 2026-03-02 om 13 49 31" src="https://github.com/user-attachments/assets/88d9cf4b-259e-40d1-9cb2-8b7f5e42ceba" />
 
+Vrijdag had ik een voortgangsgesprek met Victor. 
+
 ## week 3
 
-### maandag 9 februari
-### dinsdag 10 februari
+### maandag 9 maart
+wat heb ik vandaag gedaan? -> De dag begon met Weekly Geek Rijk van Zanten, ik heb de workshop toegankelijkheid gevolgd bij Victor en daarna heb ik gewerkt aan de onduidelijkheid in mijn javascript code. Die onduidelijkheid is nu wel opgelost, op een paar puntjes bij de validatie na. Verder heb ik vandaag (eindelijk) aan de styling gewerkt. Ik heb variabelen opgesteld uit de NS tractie en deze toegepast op de website. Daarnaast ben ik begonnen aan een nieuwe feature: na het afronden van een onderdeel de ingevulde vragen in een uitgeklapt overzicht terug kunnen zien. Tijdens de check-out heb ik dit alles besproken met ...
+
+hoelang heb ik daarover gedaan? -> Weekly geek: 45 min. Workshop: 45 min. Overzicht/oplossingen JS: 2 uur. Styling: 2,5 uur. 
+
+wat heb ik geleerd? -> Ik heb geleerd hoeveel makkleijker styling is wanneer je dat tot later bewaard en dan alles met variabelen erin knalt! Er gaat een wereld voor mij open hahaha
+
+wat ga ik de volgende keer doen? -> Morgen ga ik de validatie en styling verbeteren, kijken naar responsiveness en met css progressive disclosure toevoegen aan het uitklap overzicht. (Overige dingen op de to-do-list zijn: toegankelijkheid en toelichting toevoegen)
+
+
+### dinsdag 10 maart
+wat heb ik vandaag gedaan? -> 
+
+hoelang heb ik daarover gedaan? -> 
+
+wat heb ik geleerd? -> 
+
+wat ga ik de volgende keer doen? -> 
+
+
 ### weekvoortgang
 
 
 
 ## week 4
 
-### maandag 16 februari
-### dinsdag 17 februari
+### maandag 16 maart
+wat heb ik vandaag gedaan? -> 
+
+hoelang heb ik daarover gedaan? -> 
+
+wat heb ik geleerd? -> 
+
+wat ga ik de volgende keer doen? -> 
+
+
+### dinsdag 17 maart
+wat heb ik vandaag gedaan? -> 
+
+hoelang heb ik daarover gedaan? -> 
+
+wat heb ik geleerd? -> 
+
+wat ga ik de volgende keer doen? -> 
+
+
 ### weekvoortgang
+
