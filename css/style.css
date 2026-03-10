@@ -6,13 +6,17 @@
 
     /* KLEUREN */
     /* De NS kleuren */
-    --color-brand-primary: light dark (#ffc60f,#0b3680); 
+    --color-brand-primary: light-dark(#ffc60f,#0b3680); 
 
     /* Achtergrondkleuren */
-    --color-background-default: light-dark(#ffffff,#0d0e10); 
+    --color-background-default: light-dark(#ffffff,#0d0e10);
+    --color-background-accent-gray: light-dark(#e4e5e8,#343536);
     --color-background-interactive-default: light-dark(#0162d1,#5d9fea);
     --color-background-emphasis-primary: light-dark(#ebf5ff,#1f2c42);
     --color-background-hover: light-dark(#0b44a1,#9ac5f1);
+    --color-background-success: light-dark(#dbfbf0,#28282a);
+    --color-background-error: light-dark(#fceaea,#28282a);
+
 
     /* Tekstkleuren */
     --color-content-default: light-dark(#252528,#c4c5cb);
@@ -23,6 +27,7 @@
     /* Borderkleuren */
     --color-border-default: light-dark(#e4e5e8,#343536); 
     --color-border-input: light-dark(#919197,#757677);
+    --color-border-input: light-dark(#eaecef,#28282a);
     --color-border-input-hover: light-dark(#73747a,#979798);
     --color-border-hover: light-dark(#0b44a1,#9ac5f1); 
     --color-border-focus: light-dark(#0162d1,#5d9fea); 
@@ -71,6 +76,10 @@
     --border-width-thin: 1px;
     --border-width-medium: 2px; 
     --border-width-thick: 4px;
+
+    /* shadow */
+    --box-shadow-1: 0px 1px 4px 0px rgba(0, 0, 0, 0.08);
+    --box-shadow-2: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
 }
 
 @font-face {
@@ -85,6 +94,12 @@
 
 /* STYLING */
 /* basis opmaak */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: nssans-regular, sans-serif; 
     background-color: var(--color-background-default);
@@ -92,7 +107,7 @@ body {
     line-height: var(--line-height-body);
     font-size: var(--font-size-m);
     margin: 0;
-    padding: var(--spacing-lg);
+    background-color: var(--color-background-accent-gray);
 }
 
 h1 {
@@ -106,17 +121,44 @@ h2 {
     font-size: var(--font-size-h2);
     color: var(--color-content-emphasis);
     font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-md);
-    cursor: pointer;
+    margin-bottom: var(--spacing-sm);
 }
 
 p {
     color: var(--color-content-subtle);
 }
 
+header p {
+    background-color: red;
+    color: black;
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-bold);
+    padding: var(--spacing-md);
+    text-align: center;
+    margin: 0; 
+}
+
+main {
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto; 
+    background-color: var(--color-background-default);
+    padding: var(--spacing-xl);
+    box-shadow: 0 .125rem 0 0 rgba(7, 7, 33, .15);
+}
+
+header {
+    text-align: center;
+    margin: 0 auto;
+}
+
 /* formulieren */
 .form-chapter {
     margin-bottom: var(--spacing-xl);
+    border: var(--border-width-thin) solid var(--color-border-input);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--box-shadow-1);
+    padding: var(--spacing-md)
 }
 
 fieldset {
@@ -137,9 +179,9 @@ legend {
 /* inputs & labels */
 label {
     display: block;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-xs);
-    color: var(--color-content-default);
+    color: var(--color-content-emphasis);
 }
 
 input[type="text"],
@@ -147,17 +189,17 @@ input[type="email"],
 input[type="tel"],
 input[type="date"],
 input[type="number"] {
-    width: 100%;
+    width: 100%; 
     max-width: 400px; 
     padding: var(--spacing-sm) var(--spacing-md);
     margin-bottom: var(--spacing-md);
     font-size: var(--font-size-m);
     
-    background-color: var(--color-background-emphasis-primary);
+    background-color: var(--color-background-default);
     color: var(--color-content-default);
     
-    border: var(--border-width-medium) solid var(--color-border-input);
-    border-radius: var(--border-radius-default);
+    border: var(--border-width-thin) solid var(--color-border-input);
+    border-radius: var(--border-radius-sm);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -170,6 +212,7 @@ input[type="number"]:focus {
     outline: none;
     border-color: var(--color-border-focus);
     box-shadow: 0 0 0 3px var(--color-brand-primary);
+    background-color: var(--color-background-emphasis-primary);
 }
 
 /* radiobuttons & checkboxes */
@@ -179,7 +222,6 @@ input[type="checkbox"] {
     height: 1.25rem;
     margin: 0 var(--spacing-sm) var(--spacing-sm) 0;
     cursor: pointer;
-    /* Een moderne trick om de kleur van standaard vinkjes aan te passen! */
     accent-color: var(--color-brand-primary); 
 }
 
@@ -192,25 +234,39 @@ input[type="checkbox"] + label {
     cursor: pointer;
 }
 
+.radio-group-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-wrapper {
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center; 
+}
+
 /* buttons */
 button[type="submit"] {
     background-color: var(--color-background-interactive-default);
     color: var(--color-content-interactive-default);
-    font-size: var(--font-size-l);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-regular);
+    text-align: center;
     
     padding: var(--spacing-md) var(--spacing-xl);
     margin-top: var(--spacing-lg);
     
     border: none;
-    border-radius: var(--border-radius-default);
+    border-radius: var(--border-radius-sm);
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    box-shadow: inset 0 -.125rem 0 #004ba0;
+    display: inline-block;
 }
 
 button[type="submit"]:hover {
-    background-color: var(--color-border-hover);
-    color: var(--color-background-default); 
+    background-color: var(--color-background-hover);
+    transition: box-shadow .15s ease-in-out;
 }
 
 button[type="submit"]:active {
@@ -220,6 +276,22 @@ button[type="submit"]:active {
 button[type="submit"]:focus {
     outline: var(--border-width-thick) solid var(--color-border-focus);
     outline-offset: 2px;
+}
+
+/* stepper */
+/* height */
+#chapter-1:not(.is-finished) .chapter-content {
+    min-height: 350px;  
+    position: relative; 
+    padding-bottom: 40px; 
+}
+
+#chapter-1:not(.is-finished) .step-navigation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 0; 
 }
 
 /* buttons stepper navigatie */
@@ -232,12 +304,13 @@ button[type="submit"]:focus {
 .step-navigation button {
     background-color: var(--color-background-interactive-default);
     color: var(--color-content-interactive-default);
-    font-size: var(--font-size-m);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-regular);
     
     padding: var(--spacing-sm) var(--spacing-md);
-    border: var(--border-width-medium) solid var(--color-brand-primary);
-    border-radius: var(--border-radius-default);
+    border: none;
+    /* border: var(--border-width-medium) solid var(--color-brand-primary); */
+    border-radius: var(--border-radius-sm);
     
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease, color 0.2s ease;
@@ -280,12 +353,23 @@ button[type="submit"]:focus {
     display: block;
 }
 
-input:user-invalid {
-    border: 2px solid var(--color-border-error);
+/* validatie kleuren */
+input[type="text"]:user-invalid,
+input[type="email"]:user-invalid,
+input[type="tel"]:user-invalid,
+input[type="date"]:user-invalid,
+input[type="number"]:user-invalid {
+    border-color: var(--color-border-error);
+    background-color: var(--color-background-error);
 }
 
-input:user-valid {
-    border: 2px solid var(--color-status-success); 
+input[type="text"]:user-valid,
+input[type="email"]:user-valid,
+input[type="tel"]:user-valid,
+input[type="date"]:user-valid,
+input[type="number"]:user-valid {
+    border-color: var(--color-border-success); 
+    background-color: var(--color-background-success);
 }
 
 .is-hidden,
@@ -296,29 +380,15 @@ p.is-hidden {
     display: none;
 }
 
-
 /* uitklapbaar overzicht */
 .form-chapter.is-finished .chapter-title {
-    color: var(--color-brand-secondary);
-    text-decoration: underline;
-    transition: color 1s;
+    cursor: pointer;
 }
 
 .form-chapter.is-finished .chapter-title:hover {
-    color: var(--color-brand-primary);
-}
-
-.form-chapter.is-finished .chapter-content .step.is-hidden {
-    display: block;
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--color-border-default);
-}
-
-.form-chapter.is-finished .chapter-content .step {
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--color-border-default);
+    color: var(--color-content-emphasis);
+    text-decoration: underline;
+    text-decoration-color: var(--color-brand-primary);
 }
 
 /* verberg vorige/volgende knoppen */
@@ -326,14 +396,26 @@ p.is-hidden {
     display: none;
 }
 
-
-/* styling overzicht */
-.form-chapter.is-finished .chapter-content .step {
-    display: grid !important;
+.form-chapter.is-finished .chapter-content .step,
+.form-chapter.is-finished .chapter-content .step.is-hidden {
+    display: grid;
     grid-template-columns: 200px 1fr; 
     align-items: center; 
     row-gap: var(--spacing-sm);
     column-gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border-default);
+}
+
+.form-chapter.is-finished .chapter-content .step legend {
+    grid-column: 1 / -1; 
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-chapter.is-finished .step label,
+.form-chapter.is-finished .step input {
+    margin-bottom: 0; 
 }
 
 .form-chapter.is-finished .chapter-content .step legend {
@@ -354,4 +436,107 @@ p.is-hidden {
     background-color: transparent;
     border-color: var(--color-border-default);
     color: var(--color-content-subtle);
+}
+
+/* no javascript progressive disclosure */
+
+/* verberg alle voorwaardelijke blokken als js uit staat */
+.no-js #address-nl-wrapper,
+.no-js #address-abroad-wrapper,
+.no-js #wrapper-bsn,
+.no-js #wrapper-becon,
+.no-js #wrapper-protocol,
+.no-js #step-conditions,
+.no-js #step-settlement,
+.no-js #step-date-conditions,
+.no-js #step-child-deceased,
+.no-js #step-child-has-children,
+.no-js #step-notary {
+    display: none;
+}
+
+/* hoofdstuk 1 */
+/* getrouwd? */
+.no-js form:has(#married:checked) #step-conditions {
+    display: block;
+}
+
+/* conditions? */
+.no-js form:has(#conditions:checked) #step-settlement,
+.no-js form:has(#conditions:checked) #step-date-conditions {
+    display: block;
+}
+
+/* kinderen? */
+.no-js form:has(#children:checked) #step-child-deceased,
+.no-js form:has(#children:checked) #step-child-has-children {
+    display: block;
+}
+
+/* testament? */
+.no-js form:has(#testament:checked) #step-notary {
+    display: block;
+}
+
+/* hoofdstuk 1: overzicht (verberg overgeslagen stappen) */
+/* getrouwd? */
+.form-chapter.is-finished:has(#not-married:checked) #step-conditions,
+.form-chapter.is-finished:has(#not-married:checked) #step-settlement,
+.form-chapter.is-finished:has(#not-married:checked) #step-date-conditions {
+    display: none;
+}
+
+/* conditions? */
+.form-chapter.is-finished:has(#no-conditions:checked) #step-settlement,
+.form-chapter.is-finished:has(#no-conditions:checked) #step-date-conditions {
+    display: none;
+}
+
+/* kinderen? */
+.form-chapter.is-finished:has(#no-children:checked) #step-child-deceased,
+.form-chapter.is-finished:has(#no-children:checked) #step-child-has-children {
+    display: none;
+}
+
+/* testament? */
+.form-chapter.is-finished:has(#no-testament:checked) #step-notary {
+    display: none;
+}
+
+/* hoofdstuk 2 */
+.no-js form:has(#residence-nl:checked) #address-nl-wrapper,
+.no-js form:has(#residence-abroad:checked) #address-abroad-wrapper,
+.no-js form:has(#id-type-bsn:checked) #wrapper-bsn,
+.no-js form:has(#id-type-becon:checked) #wrapper-becon,
+.no-js form:has(#id-type-protocol:checked) #wrapper-protocol {
+    display: block;
+}
+
+/* responsiveness */
+@media (min-width: 768px) {
+    header, main {
+    max-width: 550px; 
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"] {
+    max-width: 550px; 
+    }
+}
+
+@media (min-width: 1024px) {
+    header, main {
+    max-width: 700px; 
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"] {
+    max-width: 700px; 
+    }
 }

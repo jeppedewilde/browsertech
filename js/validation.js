@@ -1,75 +1,85 @@
-// ==========================================
+// ========================
 // --- js/validation.js ---
-// ==========================================
+// ========================
 
-export function validateSingleInput(veld) {
-    const errorId = veld.getAttribute('aria-describedby');
+function checkVeld(input) {
+    const errorId = input.getAttribute('aria-describedby');
     const errorElement = document.getElementById(errorId);
+    
+    if (!errorElement) return;
 
-    if (!errorElement) return veld.checkValidity(); 
-
-    if (!veld.checkValidity()) {
-        errorElement.classList.remove('is-hidden');
-        return false;
+    if (!input.validity.valid) {
+        errorElement.classList.remove('is-hidden'); 
     } else {
         errorElement.classList.add('is-hidden');
-        return true;
     }
 }
 
 export function setupLiveValidation() {
-    const inputs = document.querySelectorAll('input:not([type="radio"]):not([type="checkbox"])');
-    inputs.forEach(veld => {
-        veld.addEventListener('blur', () => {
-            validateSingleInput(veld);
-        });
-    });
-
-    const radioInputs = document.querySelectorAll('input[type="radio"]');
-    radioInputs.forEach(radio => {
-        radio.addEventListener('change', () => {
-            const errorId = radio.getAttribute('aria-describedby');
-            if (errorId) {
-                const errorElement = document.getElementById(errorId);
-                if (errorElement && radio.checkValidity()) {
-                    errorElement.classList.add('is-hidden');
-                }
-            }
-        });
+    const alleInputs = document.querySelectorAll('input:not([type="button"]):not([type="submit"])');
+    
+    alleInputs.forEach(input => {
+        // bij input verlaten
+        input.addEventListener('blur', (event) => checkVeld(event.target));
+        
+        // radio button
+        input.addEventListener('change', (event) => checkVeld(event.target));
     });
 }
 
-export function validateCurrentStep(currentStepEl) {
-    const inputs = currentStepEl.querySelectorAll('input');
-    let isStepValid = true;
+// volgende knop
+export function validateCurrentStep(huidigeStap) {
+    const inputs = huidigeStap.querySelectorAll('input:not([type="button"]):not([type="submit"])');
+    inputs.forEach(input => checkVeld(input));
 
-    inputs.forEach(veld => {
-        if (veld.type === 'button' || veld.type === 'submit') return;
+    const eersteFouteVeld = huidigeStap.querySelector('input:invalid');
+    
+    if (eersteFouteVeld) {
+        eersteFouteVeld.focus(); 
+        return false;           
+    }
 
-        if (!veld.checkValidity()) {
-            isStepValid = false; 
-
-            const errorId = veld.getAttribute('aria-describedby');
-            if (errorId) {
-                const errorElement = document.getElementById(errorId);
-                if (errorElement) errorElement.classList.remove('is-hidden');
-            }
-        } else {
-            const errorId = veld.getAttribute('aria-describedby');
-            if (errorId) {
-                const errorElement = document.getElementById(errorId);
-                if (errorElement) errorElement.classList.add('is-hidden');
-            }
-        }
-    });
-
-    return isStepValid;
+    return true; 
 }
 
-export function clearMessages(veld) {
-    const errorId = veld.getAttribute('aria-describedby');
+// meldingen verwijderen als velden onzichtbaar worden
+export function clearMessages(input) {
+    const errorId = input.getAttribute('aria-describedby');
     const errorElement = document.getElementById(errorId);
     if (errorElement) {
         errorElement.classList.add('is-hidden');
     }
+}
+
+// check bij submit button
+export function setupSubmitValidation() {
+    const form = document.querySelector('form');
+    
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        
+        const alleInputs = form.querySelectorAll('input:not([type="button"]):not([type="submit"])');
+        let formIsGeldig = true;
+        let eersteFouteVeld = null;
+
+        alleInputs.forEach(input => {
+            checkVeld(input);
+
+            if (!input.validity.valid) {
+                formIsGeldig = false; 
+                
+                if (!eersteFouteVeld) {
+                    eersteFouteVeld = input;
+                }
+            }
+        });
+
+        if (!formIsGeldig) {
+            if (eersteFouteVeld) {
+                eersteFouteVeld.focus();
+            }
+        } else {
+            alert('Het formulier is succesvol verzonden.');
+        }
+    });
 }

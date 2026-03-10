@@ -2,9 +2,17 @@
 // --- js/main.js ---
 // ==================
 
-import { setupLiveValidation } from './validation.js';
+import { setupLiveValidation, setupSubmitValidation } from './validation.js';
 import { setupConditionalRequirements } from './conditions.js';
 import { initializeStepper } from './stepper.js';
+
+document.body.classList.remove('no-js');
+
+const form = document.querySelector('form');
+
+    if (form) {
+        form.setAttribute('novalidate', 'true');
+    }
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -16,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // start stepper
     initializeStepper();
+
+    // validatie submit button
+    setupSubmitValidation();
 
     const chapterTitles = document.querySelectorAll('.chapter-title');
 

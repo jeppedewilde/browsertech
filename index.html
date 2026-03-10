@@ -9,111 +9,175 @@
     <title>Aangifte erfbelasting</title>
 </head>
 
-<body>
+<body class="no-js">
     <header>
-        <h1>Aangifte erfbelasting</h1>
         <p>Let op! Dit is een schoolopdracht</p>
     </header>
     <main>
-        <form>
+        <h1>Aangifte erfbelasting</h1>
+        <form action="">
             <section id="chapter-1" class="form-chapter">
                 <h2 class="chapter-title">Gegevens van de overledene</h2>
                 <div class="chapter-content">
                     <fieldset class="step">
                         <legend>Persoonsgegevens overledene</legend>
                         <label for="initials-deceased">Voorletter(s)</label>
-                        <input type="text" id="initials-deceased" name="initials" required>
+                        <input type="text" id="initials-deceased" name="initials" required
+                            aria-describedby="error-initials">
+                        <p id="error-initials" class="error-message is-hidden">Vul de voorletters van de overledene in</p>
                         <label for="infix-deceased">Tussenvoegsel(s)</label>
                         <input type="text" id="infix-deceased" name="infix">
-                        <label for="lname-deceased">Achternaam</label>
-                        <input type="text" id="lname-deceased" name="last name" required>
+                        <label for="lastname-deceased">Achternaam</label>
+                        <input type="text" id="lastname-deceased" name="last name" required
+                            aria-describedby="error-lastname">
+                        <p id="error-lastname" class="error-message is-hidden">Vul de achternaam van de overledene in</p>
                         <label for="bsn">Bsn overledene</label>
                         <input type="text" id="bsn" name="bsn" pattern="[0-9]{9}" required aria-describedby="error-bsn">
                         <p id="error-bsn" class="error-message is-hidden">Vul een geldig BSN in van 9 cijfers.</p>
                         <label for="date-death">Overlijdensdatum</label>
-                        <input type="date" id="date-death" name="date of death" required>
+                        <input type="date" id="date-death" name="date of death" min='2025-07-20' max='2026-03-20' required
+                            aria-describedby="error-date-death">
+                        <p id="error-date-death" class="error-message is-hidden">Vul de overlijdensdatum van de
+                            overledene in</p>
                     </fieldset>
                     <fieldset class="step">
-                        <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van
+                        <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment
+                            van
                             overlijden?</legend>
-                        <input type="radio" id="married" name="relationship" value="married" required aria-describedby="error-married">
-                        <label for="married">Ja</label>
-                        <input type="radio" id="not-married" name="relationship" value="not-married" required aria-describedby="error-married">
-                        <label for="not-married">Nee</label>
-                        <p id="error-married" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="married" name="relationship" value="married" required
+                                aria-describedby="error-married">
+                            <label for="married">Ja</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="not-married" name="relationship" value="not-married" required
+                                aria-describedby="error-married">
+                            <label for="not-married">Nee</label>
+                        </div>
+                        <p id="error-married" class="error-message is-hidden">Kies een van bovenstaande opties.</p>
                     </fieldset>
-                    <fieldset class="step">
+                    <fieldset class="step" id="step-conditions">
                         <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of
                             partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
-                        <input type="radio" id="conditions" name="conditions" value="conditions" aria-describedby="error-conditions">
-                        <label for="conditions">Ja</label>
-                        <input type="radio" id="no-conditions" name="conditions" value="no-conditions" aria-describedby="error-conditions">
-                        <label for="no-conditions">Nee</label>
-                        <p id="error-conditions" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="conditions" name="conditions" value="conditions"
+                                aria-describedby="error-conditions">
+                            <label for="conditions">Ja</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="no-conditions" name="conditions" value="no-conditions"
+                                aria-describedby="error-conditions">
+                            <label for="no-conditions">Nee</label>
+                        </div>
+                        <p id="error-conditions" class="error-message is-hidden">Kies een van bovenstaande opties.</p>
                     </fieldset>
-                    <fieldset class="step">
+                    <fieldset class="step" id="step-settlement">
                         <legend>Hadden de overledene en diens partner een finaalverrekenbeding?</legend>
-                        <input type="radio" id="final-settlement" name="final-settlement" value="final-settlement" aria-describedby="error-settlement">
-                        <label for="final-settlement">Ja</label>
-                        <input type="radio" id="no-final-settlement" name="final-settlement" value="no-final-settlement" aria-describedby="error-settlement">
-                        <label for="no-final-settlement">Nee</label>
-                        <p id="error-settlement" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="final-settlement" name="final-settlement" value="final-settlement"
+                                aria-describedby="error-settlement">
+                            <label for="final-settlement">Ja</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="no-final-settlement" name="final-settlement"
+                                value="no-final-settlement" aria-describedby="error-settlement">
+                            <label for="no-final-settlement">Nee</label>
+                        </div>
+                        <p id="error-settlement" class="error-message is-hidden">Kies een van bovenstaande opties.</p>
                     </fieldset>
-                    <fieldset class="step">
+                    <fieldset class="step" id="step-date-conditions">
                         <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
                         <label for="date-conditions">Datum huwelijkse of partnerschapsvoorwaarden</label>
-                        <input type="date" id="date-conditions" name="date conditions">
+                        <input type="date" id="date-conditions" name="date conditions" min='2025-07-20' max='2026-03-20'
+                            aria-describedby="error-date-conditions">
+                        <p id="error-date-conditions" class="error-message is-hidden">Vul een datum in.</p>
                     </fieldset>
                     <fieldset class="step">
                         <legend>Had de overledene kinderen?</legend>
-                        <input type="radio" id="children" name="children" value="children" required aria-describedby="error-children">
-                        <label for="children">Ja</label>
-                        <input type="radio" id="no-children" name="children" value="no-children" required aria-describedby="error-children">
-                        <label for="no-children">Nee</label>
-                        <p id="error-children" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="children" name="children" value="children" required
+                                aria-describedby="error-children">
+                            <label for="children">Ja</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="no-children" name="children" value="no-children" required
+                                aria-describedby="error-children">
+                            <label for="no-children">Nee</label>
+                        </div>
+                        <p id="error-children" class="error-message is-hidden">Kies een van bovenstaande opties.</p>
                     </fieldset>
-                    <fieldset class="step">
+                    <fieldset class="step" id="step-child-deceased">
                         <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
                         </legend>
-                        <input type="radio" id="child-deceased" name="child-deceased" value="child-deceased" aria-describedby="error-deceased">
-                        <label for="child-deceased">Ja</label>
-                        <input type="radio" id="no-child-deceased" name="child-deceased" value="no-child-deceased" aria-describedby="error-deceased">
-                        <label for="no-child-deceased">Nee</label>
-                        <p id="error-deceased" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="child-deceased" name="child-deceased" value="child-deceased"
+                                aria-describedby="error-deceased">
+                            <label for="child-deceased">Ja</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="no-child-deceased" name="child-deceased" value="no-child-deceased"
+                                aria-describedby="error-deceased">
+                            <label for="no-child-deceased">Nee</label>
+                        </div>
+                        <p id="error-deceased" class="error-message is-hidden">Kies een van bovenstaande opties.</p>
                     </fieldset>
-                    <fieldset class="step">
+                    <fieldset class="step" id="step-child-has-children">
                         <legend>Had dit overleden kind zelf kinderen?</legend>
-                        <input type="radio" id="child-has-children" name="child-has-children" value="child-has-children" aria-describedby="error-child-children">
-                        <label for="child-has-children">Ja</label>
-                        <input type="radio" id="child-no-children" name="child-has-children" value="child-no-children" aria-describedby="error-child-children">
-                        <label for="child-no-children">Nee</label>
-                        <p id="error-child-children" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="child-has-children" name="child-has-children"
+                                value="child-has-children" aria-describedby="error-child-children">
+                            <label for="child-has-children">Ja</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="child-no-children" name="child-has-children"
+                                value="child-no-children" aria-describedby="error-child-children">
+                            <label for="child-no-children">Nee</label>
+                        </div>
+                        <p id="error-child-children" class="error-message is-hidden">Kies een van bovenstaande opties.
+                        </p>
                     </fieldset>
                     <fieldset class="step">
                         <legend>Had de overledene een testament?</legend>
-                        <input type="radio" id="testament" name="testament" value="testament" required aria-describedby="error-testament">
-                        <label for="testament">Ja</label>
-                        <input type="radio" id="no-testament" name="testament" value="no-testament" required aria-describedby="error-testament">
-                        <label for="no-testament">Nee</label>
-                        <p id="error-testament" class="error-message is-hidden">Kies alstublieft een optie.</p>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="testament" name="testament" value="testament" required
+                                aria-describedby="error-testament">
+                            <label for="testament">Ja</label>
+                        </div>
+                        <div class="radio-wrapper">
+                            <input type="radio" id="no-testament" name="testament" value="no-testament" required
+                                aria-describedby="error-testament">
+                            <label for="no-testament">Nee</label>
+                        </div>
+                        <p id="error-testament" class="error-message is-hidden">Kies een van bovenstaande opties.</p>
                     </fieldset>
-                    <fieldset class="step">
+                    <fieldset class="step" id="step-notary">
                         <legend>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het
                             testament</legend>
                         <label for="protocol-number">Protocolnummer notaris</label>
-                        <input type="text" id="protocol-number" name="protocol-number">
+                        <input type="text" id="protocol-number" name="protocol-number" pattern="[0-9]{6}"
+                            aria-describedby="error-protocol">
+                        <p id="error-protocol" class="error-message is-hidden">Het protocolnummer moet bestaan uit 6
+                            cijfers. Is het protocolnummer minder dan 6 cijfer? Vul dan met nullen vóór het
+                            protocolnummer aan tot 6.</p>
                         <label for="initials-notary">Voorletter(s)</label>
-                        <input type="text" id="initials-notary" name="initials">
+                        <input type="text" id="initials-notary" name="initials"
+                            aria-describedby="error-initials-notary">
+                        <p id="error-initials-notary" class="error-message is-hidden">Vul de voorletters van de notaris
+                            in.</p>
                         <label for="infix-notary">Tussenvoegsel(s)</label>
                         <input type="text" id="infix-notary" name="infix">
-                        <label for="lname-notary">Achternaam</label>
-                        <input type="text" id="lname-notary" name="last-name">
+                        <label for="lastname-notary">Achternaam</label>
+                        <input type="text" id="lastname-notary" name="last-name"
+                            aria-describedby="error-lastname-notary">
+                        <p id="error-lastname-notary" class="error-message is-hidden">Vul de achternaam van de notaris
+                            in.</p>
                         <label for="location">Vestigingsplaats</label>
                         <input type="text" id="location" name="location" aria-describedby="error-location">
                         <p id="error-location" class="error-message is-hidden">Vul een geldige locatie in.</p>
                         <legend>Datum van het testament of van de laatste wijziging</legend>
                         <label for="date-changes">Datum</label>
-                        <input type="date" id="date-changes" name="date-changes">
+                        <input type="date" id="date-changes" name="date-changes" min='2025-07-20' max='2026-03-20' aria-describedby="error-date-changes">
+                        <p id="error-date-changes" class="error-message is-hidden">Vul een datum in.</p>
                     </fieldset>
                 </div>
             </section>
@@ -124,44 +188,66 @@
                     <fieldset>
                         <legend>Persoonsgegevens gemachtigde</legend>
 
-                        <fieldset>
+                        <fieldset class="radio-group-wrapper">
                             <legend>Welk identificatienummer wilt u opgeven?</legend>
-                            <input type="radio" id="id-type-bsn" name="id-type" value="bsn" checked>
-                            <label for="id-type-bsn">Bsn/RSIN</label>
+                            <div class="radio-wrapper">
+                                <input type="radio" id="id-type-bsn" name="id-type" value="bsn" checked>
+                                <label for="id-type-bsn">BSN/RSIN</label>
+                            </div>
 
-                            <input type="radio" id="id-type-becon" name="id-type" value="becon">
-                            <label for="id-type-becon">Beconnummer</label>
+                            <div class="radio-wrapper">
+                                <input type="radio" id="id-type-becon" name="id-type" value="becon">
+                                <label for="id-type-becon">Beconnummer</label>
+                            </div>
 
-                            <input type="radio" id="id-type-protocol" name="id-type" value="protocol">
-                            <label for="id-type-protocol">Protocolnummer notaris</label>
+                            <div class="radio-wrapper">
+                                <input type="radio" id="id-type-protocol" name="id-type" value="protocol">
+                                <label for="id-type-protocol">Protocolnummer notaris</label>
+                            </div>
                         </fieldset>
 
                         <div id="wrapper-bsn">
                             <label for="bsn-rsin">Bsn/RSIN gemachtigde</label>
-                            <input type="text" id="bsn-rsin" name="bsn-rsin" pattern="[0-9]{9}">
+                            <input type="text" id="bsn-rsin" name="bsn-rsin" pattern="[0-9]{9}"
+                                aria-describedby="error-bsn-rsin">
+                            <p id="error-bsn-rsin" class="error-message is-hidden">Vul een geldig BSN of RSIN in van 9
+                                cijfers.</p>
                         </div>
 
                         <div id="wrapper-becon">
                             <label for="becon-number">Beconnummer adviseur</label>
-                            <input type="text" id="becon-number" name="becon-number" pattern="[0-9]{9}">
+                            <input type="text" id="becon-number" name="becon-number" pattern="[0-9]{6}"
+                                aria-describedby="error-becon">
+                            <p id="error-becon" class="error-message is-hidden">Vul een geldig beconnummer in van 6
+                                cijfers.</p>
                         </div>
 
                         <div id="wrapper-protocol">
                             <label for="protocol-number2">Protocolnummer notaris</label>
-                            <input type="text" id="protocol-number2" name="protocol-number2">
+                            <input type="text" id="protocol-number2" name="protocol-number2"
+                                aria-describedby="error-protocol2">
+                            <p id="error-protocol2" class="error-message is-hidden">Het protocolnummer moet bestaan uit
+                                6 cijfers. Is het protocolnummer minder dan 6 cijfer? Vul dan met nullen vóór het
+                                protocolnummer aan tot 6.</p>
                         </div>
 
                         <label for="initials-authorized">Voorletter(s)</label>
-                        <input type="text" id="initials-authorized" name="initials" required>
+                        <input type="text" id="initials-authorized" name="initials" required
+                            aria-describedby="error-initials-authorized">
+                        <p id="error-initials-authorized" class="error-message is-hidden">Vul uw voorletters in.</p>
 
                         <label for="infix-authorized">Tussenvoegsel(s)</label>
                         <input type="text" id="infix-authorized" name="infix">
 
                         <label for="lname-authorized">Achternaam</label>
-                        <input type="text" id="lname-authorized" name="last-name" required>
+                        <input type="text" id="lname-authorized" name="last-name" required
+                            aria-describedby="error-lastname-authorized">
+                        <p id="error-lastname-authorized" class="error-message is-hidden">Vul uw achternaam in.</p>
 
                         <label for="institution">Naam instelling (bijvoorbeeld notarisbureau)</label>
-                        <input type="text" id="institution" name="institution" required>
+                        <input type="text" id="institution" name="institution" required
+                            aria-describedby="error-institution">
+                        <p id="error-institution" class="error-message is-hidden">Vul de naam van de instelling in.</p>
                     </fieldset>
 
                     <fieldset>
@@ -169,11 +255,15 @@
 
                         <fieldset>
                             <legend>Waar woont de gemachtigde?</legend>
-                            <input type="radio" id="residence-nl" name="residence-type" value="nl" checked>
-                            <label for="residence-nl">In Nederland</label>
+                            <div class="radio-wrapper">
+                                <input type="radio" id="residence-nl" name="residence-type" value="nl" checked>
+                                <label for="residence-nl">In Nederland</label>
+                            </div>
 
-                            <input type="radio" id="residence-abroad" name="residence-type" value="abroad">
-                            <label for="residence-abroad">In het buitenland</label>
+                            <div class="radio-wrapper">
+                                <input type="radio" id="residence-abroad" name="residence-type" value="abroad">
+                                <label for="residence-abroad">In het buitenland</label>
+                            </div>
                         </fieldset>
 
                         <div id="address-nl-wrapper">

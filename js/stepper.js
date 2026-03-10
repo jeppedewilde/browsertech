@@ -12,10 +12,6 @@ export function initializeStepper() {
     let currentStepIndex = 0;
     let stepHistory = []; 
 
-    // ------------------------------------------------------------------------
-    // --- HULPFUNCTIES ---
-    // ------------------------------------------------------------------------
-
     const createButton = (text, onClick) => {
         const btn = document.createElement('button');
         btn.type = 'button';
@@ -38,10 +34,6 @@ export function initializeStepper() {
         });
     };
 
-    // ------------------------------------------------------------------------
-    // --- NAVIGATIE LOGICA ---
-    // ------------------------------------------------------------------------
-
     const goToStep = (newIndex) => {
         steps[currentStepIndex].classList.add('is-hidden'); 
         currentStepIndex = newIndex; 
@@ -52,37 +44,28 @@ export function initializeStepper() {
     };
 
 const finishStepper = () => {
-        const stepperChapter = steps[0].closest('.form-chapter'); // Dit is Hoofdstuk 1
+        const stepperChapter = steps[0].closest('.form-chapter'); 
         const allChapters = document.querySelectorAll('.form-chapter');
         
-        // 1. Geef Hoofdstuk 1 de 'is-finished' status (jouw CSS doet nu de rest voor de stappen!)
         stepperChapter.classList.add('is-finished');
         
-        // 2. Verberg niet het HELE hoofdstuk, maar alleen het 'doosje' met de vragen erin
         const content = stepperChapter.querySelector('.chapter-content');
         if (content) {
             content.classList.add('is-hidden');
         }
         
-        // 3. Zorg dat de sectie zelf zichtbaar blijft (zodat we de <h2> nog zien)
         stepperChapter.classList.remove('is-hidden');
 
-        // 4. Laat alle overige hoofdstukken (Hoofdstuk 2) netjes in beeld verschijnen
         allChapters.forEach(chapter => {
             if (chapter !== stepperChapter) {
                 chapter.classList.remove('is-hidden');
             }
         });
 
-        // 5. Zet de focus netjes op de titel van Hoofdstuk 2 voor schermlezers
         if (allChapters.length > 1 && allChapters[1]) {
             setFocus(allChapters[1].querySelector('h2'));
         }
     };
-
-    // ------------------------------------------------------------------------
-    // --- INITIALISATIE ---
-    // ------------------------------------------------------------------------
 
     steps.forEach((step, index) => {
         step.classList.toggle('is-hidden', index !== currentStepIndex);

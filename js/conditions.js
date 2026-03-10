@@ -6,7 +6,6 @@ import { clearMessages } from './validation.js';
 
 export function setupConditionalRequirements() {
     
-    // --- HOOFDSTUK 1 LOGICA ---
     const toggleRequired = (isConditionMet, elements) => {
         elements.forEach(el => {
             if (!el) return; 
@@ -36,7 +35,7 @@ export function setupConditionalRequirements() {
         toggleRequired(hasTestament, [
             document.getElementById('protocol-number'),
             document.getElementById('initials-notary'),
-            document.getElementById('lname-notary'),
+            document.getElementById('lastname-notary'),
             document.getElementById('location'),
             document.getElementById('date-changes')
         ]);
@@ -46,29 +45,21 @@ export function setupConditionalRequirements() {
     triggers.forEach(radio => radio.addEventListener('change', updateConditions));
     updateConditions();
 
-    // --- HOOFDSTUK 2 LOGICA ---
     const adresRadios = document.querySelectorAll('input[name="residence-type"]');
     adresRadios.forEach(radio => radio.addEventListener('change', adresWeergave));
 
     const idRadios = document.querySelectorAll('input[name="id-type"]');
     idRadios.forEach(radio => radio.addEventListener('change', idWeergave));
 
-    // Draai ze direct 1 keer bij het laden
     adresWeergave();
     idWeergave();
 }
 
-// =====================================
-// --- HOOFDSTUK 2 FUNCTIES ------------
-// =====================================
-
-// Adres Binnenland/Buitenland 
+// adres binnenland / buitenland switch
 export function adresWeergave() {
     const nlRadio = document.getElementById('residence-nl');
     const nlBlok = document.getElementById('address-nl-wrapper');
     const buitenlandBlok = document.getElementById('address-abroad-wrapper');
-
-    if (!nlRadio || !nlBlok || !buitenlandBlok) return; // Veiligheidscheck
 
     const nlVelden = nlBlok.querySelectorAll('input:not(#addition)');
     const buitenlandVelden = buitenlandBlok.querySelectorAll('input');
@@ -86,7 +77,7 @@ export function adresWeergave() {
     }
 }
 
-// Functie voor BSN / Becon / Protocol switch
+// BSN / becon / protocolnummer switch
 export function idWeergave() {
     const bsnRadio = document.getElementById('id-type-bsn');
     const beconRadio = document.getElementById('id-type-becon');
@@ -119,10 +110,7 @@ export function idWeergave() {
     }
 }
 
-// =====================================
-// --- STEPPER ROUTING LOGIC -----------
-// =====================================
-
+// stepper route
 export function determineNextStep(currentIndex, totalSteps) {
     const relValue = document.querySelector('input[name="relationship"]:checked')?.value;
     const conditionsValue = document.querySelector('input[name="conditions"]:checked')?.value;
