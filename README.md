@@ -69,23 +69,23 @@ Vrijdag had ik een voortgangsgesprek met Victor.
 ## week 3
 
 ### maandag 9 maart
-wat heb ik vandaag gedaan? -> De dag begon met Weekly Geek Rijk van Zanten, ik heb de workshop toegankelijkheid gevolgd bij Victor en daarna heb ik gewerkt aan de onduidelijkheid in mijn javascript code. Die onduidelijkheid is nu wel opgelost, op een paar puntjes bij de validatie na. Verder heb ik vandaag (eindelijk) aan de styling gewerkt. Ik heb variabelen opgesteld uit de NS tractie en deze toegepast op de website. Daarnaast ben ik begonnen aan een nieuwe feature: na het afronden van een onderdeel de ingevulde vragen in een uitgeklapt overzicht terug kunnen zien. Tijdens de check-out heb ik dit alles besproken met ...
+wat heb ik vandaag gedaan? -> De dag begon met Weekly Geek Rijk van Zanten, ik heb de workshop toegankelijkheid gevolgd bij Victor en daarna heb ik gewerkt aan de onduidelijkheid in mijn javascript code. Die onduidelijkheid is nu wel opgelost, op een paar puntjes bij de validatie na. Verder heb ik vandaag (eindelijk) aan de styling gewerkt. Ik heb variabelen opgesteld uit de NS tractie en deze toegepast op de website. Daarnaast ben ik begonnen aan een nieuwe feature: na het afronden van een onderdeel de ingevulde vragen in een uitgeklapt overzicht terug kunnen zien. Tijdens de check-out heb ik dit alles besproken met ... (Justin?).
 
 hoelang heb ik daarover gedaan? -> Weekly geek: 45 min. Workshop: 45 min. Overzicht/oplossingen JS: 2 uur. Styling: 2,5 uur. 
 
 wat heb ik geleerd? -> Ik heb geleerd hoeveel makkleijker styling is wanneer je dat tot later bewaard en dan alles met variabelen erin knalt! Er gaat een wereld voor mij open hahaha
 
-wat ga ik de volgende keer doen? -> Morgen ga ik de validatie en styling verbeteren, kijken naar responsiveness en met css progressive disclosure toevoegen aan het uitklap overzicht. (Overige dingen op de to-do-list zijn: toegankelijkheid en toelichting toevoegen)
+wat ga ik de volgende keer doen? -> Morgen ga ik de validatie en styling verbeteren, kijken naar responsiveness en met css progressive disclosure toevoegen aan het uitklap overzicht.
 
 
 ### dinsdag 10 maart
-wat heb ik vandaag gedaan? -> 
+wat heb ik vandaag gedaan? -> Vandaag begonnen we met de weekly geek, we hadden een filmpje gekeken over input fields en moesten daarover een wooclap quiz doen. Daarna ben ik aan de slag gegaan met het verbeteren van mijn validatie, het toevoegen van progressive disclosure met css (voor als js niet werkt) en responsiveness. Daarnaast heb ik gewerkt aan mijn styling maar die is nog niet af. Tijdens de check-out heb ik dit alles besproken met ...
 
-hoelang heb ik daarover gedaan? -> 
+hoelang heb ik daarover gedaan? -> Hier ben ik de hele dag mee bezig geweest.
 
-wat heb ik geleerd? -> 
+wat heb ik geleerd? -> Ik heb vandaag vooral aan onderdelen gewerkt waar ik vaker mee bezig ben geweest, dus niet heel veel nieuwe informatie vandaag.
 
-wat ga ik de volgende keer doen? -> 
+wat ga ik de volgende keer doen? -> Styling en validatie perfectionaliseren!
 
 
 ### weekvoortgang
