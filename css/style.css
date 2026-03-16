@@ -1,43 +1,41 @@
 :root {
     color-scheme: light dark;
-    /* ==========================================
-    TRACTIE FUNDAMENTALS - NS DESIGN SYSTEM
-       ========================================== */
+
+    /* NS DESIGN SYSTEM */
 
     /* KLEUREN */
     /* De NS kleuren */
-    --color-brand-primary: light-dark(#ffc60f,#0b3680); 
+    --color-brand-primary: light-dark(#ffc60f, #0b3680);
 
     /* Achtergrondkleuren */
-    --color-background-default: light-dark(#ffffff,#0d0e10);
-    --color-background-accent-gray: light-dark(#e4e5e8,#343536);
-    --color-background-interactive-default: light-dark(#0162d1,#5d9fea);
-    --color-background-emphasis-primary: light-dark(#ebf5ff,#1f2c42);
-    --color-background-hover: light-dark(#0b44a1,#9ac5f1);
-    --color-background-success: light-dark(#dbfbf0,#28282a);
-    --color-background-error: light-dark(#fceaea,#28282a);
-
+    --color-background-default: light-dark(#ffffff, #0d0e10);
+    --color-background-accent-gray: light-dark(#e4e5e8, #343536);
+    --color-background-interactive-default: light-dark(#0162d1, #5d9fea);
+    --color-background-emphasis-primary: light-dark(#ebf5ff, #1f2c42);
+    --color-background-hover: light-dark(#0b44a1, #9ac5f1);
+    --color-background-success: light-dark(#dbfbf0, #28282a);
+    --color-background-error: light-dark(#fceaea, #28282a);
 
     /* Tekstkleuren */
-    --color-content-default: light-dark(#252528,#c4c5cb);
-    --color-content-interactive-default: light-dark(#ffffff,#0b44a1);
-    --color-content-emphasis: light-dark(#0b3680,#e4e5e8); 
-    --color-content-subtle: light-dark(#73747a,#979798);
+    --color-content-default: light-dark(#252528, #c4c5cb);
+    --color-content-interactive-default: light-dark(#ffffff, #0b44a1);
+    --color-content-emphasis: light-dark(#0b3680, #e4e5e8);
+    --color-content-subtle: light-dark(#73747a, #979798);
 
     /* Borderkleuren */
-    --color-border-default: light-dark(#e4e5e8,#343536); 
-    --color-border-input: light-dark(#919197,#757677);
-    --color-border-input: light-dark(#eaecef,#28282a);
-    --color-border-input-hover: light-dark(#73747a,#979798);
-    --color-border-hover: light-dark(#0b44a1,#9ac5f1); 
-    --color-border-focus: light-dark(#0162d1,#5d9fea); 
-    --color-border-success: light-dark(#3e7f67,#4dcda5);
-    --color-border-warning: light-dark(#f05c01,#ff9545);
-    --color-border-error: light-dark(#ce092d,#ff9396);
+    --color-border-default: light-dark(#e4e5e8, #343536);
+    --color-border-input: light-dark(#919197, #757677);
+    --color-border-input: light-dark(#eaecef, #28282a);
+    --color-border-input-hover: light-dark(#73747a, #979798);
+    --color-border-hover: light-dark(#0b44a1, #9ac5f1);
+    --color-border-focus: light-dark(#0162d1, #5d9fea);
+    --color-border-success: light-dark(#3e7f67, #4dcda5);
+    --color-border-warning: light-dark(#f05c01, #ff9545);
+    --color-border-error: light-dark(#ce092d, #ff9396);
 
     /* Validatiekleuren */
     --color-status-error: #d32f2f;
-    --color-status-success: #2e7d32; 
+    --color-status-success: #2e7d32;
 
     /* --- TYPOGRAFIE --- */
     --font-size-h1: 28px;
@@ -51,12 +49,12 @@
     --font-size-xxxl: clamp(1.375rem, 1.125rem + 0.8333vi, 1.75rem);
 
     /* Font weights */
-    --font-weight-regular: 400; 
-    --font-weight-medium: 500; 
-    --font-weight-bold: 700;   
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
 
     /* Line-heights */
-    --line-height-body: 1.5;    
+    --line-height-body: 1.5;
     --line-height-heading: 1.25;
 
     /* --- SPATIËRING --- */
@@ -66,15 +64,17 @@
     --spacing-lg: 24px;
     --spacing-xl: 32px;
 
-    --spacing-gap-s: 8px; /* horizontaal */
-    --spacing-gap-m: 16px; /* verticaal */
+    --spacing-gap-s: 8px;
+    /* horizontaal */
+    --spacing-gap-m: 16px;
+    /* verticaal */
 
     /* --- BORDERS --- */
-    --border-radius-sm: 4px; 
-    --border-radius-default: 6px; 
-    
+    --border-radius-sm: 4px;
+    --border-radius-default: 6px;
+
     --border-width-thin: 1px;
-    --border-width-medium: 2px; 
+    --border-width-medium: 2px;
     --border-width-thick: 4px;
 
     /* shadow */
@@ -101,7 +101,7 @@
 }
 
 body {
-    font-family: nssans-regular, sans-serif; 
+    font-family: nssans-regular, sans-serif;
     background-color: var(--color-background-default);
     color: var(--color-content-default);
     line-height: var(--line-height-body);
@@ -135,13 +135,13 @@ header p {
     font-weight: var(--font-weight-bold);
     padding: var(--spacing-md);
     text-align: center;
-    margin: 0; 
+    margin: 0;
 }
 
 main {
     width: 100%;
-    max-width: 400px; 
-    margin: 0 auto; 
+    max-width: 400px;
+    margin: 0 auto;
     background-color: var(--color-background-default);
     padding: var(--spacing-xl);
     box-shadow: 0 .125rem 0 0 rgba(7, 7, 33, .15);
@@ -189,15 +189,15 @@ input[type="email"],
 input[type="tel"],
 input[type="date"],
 input[type="number"] {
-    width: 100%; 
-    max-width: 400px; 
+    width: 100%;
+    max-width: 400px;
     padding: var(--spacing-sm) var(--spacing-md);
     margin-bottom: var(--spacing-md);
     font-size: var(--font-size-m);
-    
+
     background-color: var(--color-background-default);
     color: var(--color-content-default);
-    
+
     border: var(--border-width-thin) solid var(--color-border-input);
     border-radius: var(--border-radius-sm);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -222,13 +222,13 @@ input[type="checkbox"] {
     height: 1.25rem;
     margin: 0 var(--spacing-sm) var(--spacing-sm) 0;
     cursor: pointer;
-    accent-color: var(--color-brand-primary); 
+    accent-color: var(--color-brand-primary);
 }
 
-input[type="radio"] + label,
-input[type="checkbox"] + label {
+input[type="radio"]+label,
+input[type="checkbox"]+label {
     display: inline-block;
-    font-weight: var(--font-weight-regular); 
+    font-weight: var(--font-weight-regular);
     margin-bottom: var(--spacing-sm);
     margin-right: var(--spacing-md);
     cursor: pointer;
@@ -242,7 +242,7 @@ input[type="checkbox"] + label {
 .radio-wrapper {
     margin-bottom: var(--spacing-sm);
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 /* buttons */
@@ -252,10 +252,10 @@ button[type="submit"] {
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-regular);
     text-align: center;
-    
+
     padding: var(--spacing-md) var(--spacing-xl);
     margin-top: var(--spacing-lg);
-    
+
     border: none;
     border-radius: var(--border-radius-sm);
     cursor: pointer;
@@ -270,7 +270,7 @@ button[type="submit"]:hover {
 }
 
 button[type="submit"]:active {
-    transform: scale(0.98); 
+    transform: scale(0.98);
 }
 
 button[type="submit"]:focus {
@@ -281,9 +281,9 @@ button[type="submit"]:focus {
 /* stepper */
 /* height */
 #chapter-1:not(.is-finished) .chapter-content {
-    min-height: 350px;  
-    position: relative; 
-    padding-bottom: 40px; 
+    min-height: 350px;
+    position: relative;
+    padding-bottom: 40px;
 }
 
 #chapter-1:not(.is-finished) .step-navigation {
@@ -291,13 +291,13 @@ button[type="submit"]:focus {
     bottom: 0;
     left: 0;
     width: 100%;
-    margin-top: 0; 
+    margin-top: 0;
 }
 
 /* buttons stepper navigatie */
 .step-navigation {
     display: flex;
-    gap: var(--spacing-md); 
+    gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
 }
 
@@ -306,12 +306,12 @@ button[type="submit"]:focus {
     color: var(--color-content-interactive-default);
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-regular);
-    
+
     padding: var(--spacing-sm) var(--spacing-md);
     border: none;
     /* border: var(--border-width-medium) solid var(--color-brand-primary); */
     border-radius: var(--border-radius-sm);
-    
+
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease, color 0.2s ease;
 }
@@ -333,8 +333,8 @@ button[type="submit"]:focus {
 
 /* vorige knop */
 .step-navigation button:first-child:not(:last-child) {
-    background-color: transparent; 
-    border-color: var(--color-border-default); 
+    background-color: transparent;
+    border-color: var(--color-border-default);
     color: var(--color-content-default);
 }
 
@@ -348,7 +348,7 @@ button[type="submit"]:focus {
     color: var(--color-status-error);
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-medium);
-    margin-top: calc(var(--spacing-xs) * -1); 
+    margin-top: calc(var(--spacing-xs) * -1);
     margin-bottom: var(--spacing-md);
     display: block;
 }
@@ -368,7 +368,7 @@ input[type="email"]:user-valid,
 input[type="tel"]:user-valid,
 input[type="date"]:user-valid,
 input[type="number"]:user-valid {
-    border-color: var(--color-border-success); 
+    border-color: var(--color-border-success);
     background-color: var(--color-background-success);
 }
 
@@ -399,8 +399,8 @@ p.is-hidden {
 .form-chapter.is-finished .chapter-content .step,
 .form-chapter.is-finished .chapter-content .step.is-hidden {
     display: grid;
-    grid-template-columns: 200px 1fr; 
-    align-items: center; 
+    grid-template-columns: 200px 1fr;
+    align-items: center;
     row-gap: var(--spacing-sm);
     column-gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
@@ -409,23 +409,23 @@ p.is-hidden {
 }
 
 .form-chapter.is-finished .chapter-content .step legend {
-    grid-column: 1 / -1; 
+    grid-column: 1 / -1;
     margin-bottom: var(--spacing-sm);
 }
 
 .form-chapter.is-finished .step label,
 .form-chapter.is-finished .step input {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .form-chapter.is-finished .chapter-content .step legend {
-    grid-column: 1 / -1; 
+    grid-column: 1 / -1;
     margin-bottom: var(--spacing-sm);
 }
 
 .form-chapter.is-finished .step label,
 .form-chapter.is-finished .step input {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .form-chapter.is-finished .step input[type="text"],
@@ -436,6 +436,48 @@ p.is-hidden {
     background-color: transparent;
     border-color: var(--color-border-default);
     color: var(--color-content-subtle);
+}
+
+/* PROGRESSBAR */
+.progress-wrapper {
+    margin-bottom: var(--spacing-lg);
+}
+
+.progress-wrapper label {
+    font-size: var(--font-size-s);
+    color: var(--color-content-subtle);
+    margin-bottom: var(--spacing-xs);
+}
+
+progress {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border: none;
+    border-radius: var(--border-radius-default);
+    background-color: var(--color-border-default);
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--color-border-default);
+    border-radius: var(--border-radius-default);
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--color-brand-primary);
+    border-radius: var(--border-radius-default);
+    transition: width 0.4s ease-out;
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--color-brand-primary);
+    border-radius: var(--border-radius-default);
+}
+
+/* Verberg de balk in het eindoverzicht */
+.form-chapter.is-finished .progress-wrapper {
+    display: none;
 }
 
 /* no javascript progressive disclosure */
@@ -514,8 +556,10 @@ p.is-hidden {
 
 /* responsiveness */
 @media (min-width: 768px) {
-    header, main {
-    max-width: 550px; 
+
+    header,
+    main {
+        max-width: 550px;
     }
 
     input[type="text"],
@@ -523,13 +567,15 @@ p.is-hidden {
     input[type="tel"],
     input[type="date"],
     input[type="number"] {
-    max-width: 550px; 
+        max-width: 550px;
     }
 }
 
 @media (min-width: 1024px) {
-    header, main {
-    max-width: 700px; 
+
+    header,
+    main {
+        max-width: 700px;
     }
 
     input[type="text"],
@@ -537,6 +583,6 @@ p.is-hidden {
     input[type="tel"],
     input[type="date"],
     input[type="number"] {
-    max-width: 700px; 
+        max-width: 700px;
     }
 }

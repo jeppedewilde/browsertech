@@ -2,6 +2,7 @@
 // --- js/validation.js ---
 // ========================
 
+// check validity + show error msg with aria-describedby
 function checkVeld(input) {
     const errorId = input.getAttribute('aria-describedby');
     const errorElement = document.getElementById(errorId);
@@ -15,6 +16,7 @@ function checkVeld(input) {
     }
 }
 
+// validation bij verlaten input field met blur & radio button met change
 export function setupLiveValidation() {
     const alleInputs = document.querySelectorAll('input:not([type="button"]):not([type="submit"])');
     

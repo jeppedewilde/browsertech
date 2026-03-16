@@ -4,17 +4,18 @@
 
 import { clearMessages } from './validation.js';
 
+// toggle required element
 export function setupConditionalRequirements() {
     
     const toggleRequired = (isConditionMet, elements) => {
-        elements.forEach(el => {
-            if (!el) return; 
+        elements.forEach(inputField => {
+            if (inputField) return; 
             if (isConditionMet) {
-                el.setAttribute('required', 'required');
+                inputField.setAttribute('required', 'required');
             } else {
-                el.removeAttribute('required');
-                clearMessages(el);
-                el.classList.remove('is-validated');
+                inputField.removeAttribute('required');
+                clearMessages(inputField);
+                inputField.classList.remove('is-validated');
             }
         });
     };

@@ -19,24 +19,30 @@
             <section id="chapter-1" class="form-chapter">
                 <h2 class="chapter-title">Gegevens van de overledene</h2>
                 <div class="chapter-content">
+                    <div class="progress-wrapper">
+                        <label for="form-progress">Uw voortgang in dit hoofdstuk</label>
+                        <progress id="form-progress" value="0" max="100"></progress>
+                    </div>
                     <fieldset class="step">
                         <legend>Persoonsgegevens overledene</legend>
                         <label for="initials-deceased">Voorletter(s)</label>
                         <input type="text" id="initials-deceased" name="initials" required
                             aria-describedby="error-initials">
-                        <p id="error-initials" class="error-message is-hidden">Vul de voorletters van de overledene in</p>
+                        <p id="error-initials" class="error-message is-hidden">Vul de voorletters van de overledene in
+                        </p>
                         <label for="infix-deceased">Tussenvoegsel(s)</label>
                         <input type="text" id="infix-deceased" name="infix">
                         <label for="lastname-deceased">Achternaam</label>
                         <input type="text" id="lastname-deceased" name="last name" required
                             aria-describedby="error-lastname">
-                        <p id="error-lastname" class="error-message is-hidden">Vul de achternaam van de overledene in</p>
+                        <p id="error-lastname" class="error-message is-hidden">Vul de achternaam van de overledene in
+                        </p>
                         <label for="bsn">Bsn overledene</label>
                         <input type="text" id="bsn" name="bsn" pattern="[0-9]{9}" required aria-describedby="error-bsn">
                         <p id="error-bsn" class="error-message is-hidden">Vul een geldig BSN in van 9 cijfers.</p>
                         <label for="date-death">Overlijdensdatum</label>
-                        <input type="date" id="date-death" name="date of death" min='2025-07-20' max='2026-03-20' required
-                            aria-describedby="error-date-death">
+                        <input type="date" id="date-death" name="date of death" min='2025-07-20' max='2026-03-20'
+                            required aria-describedby="error-date-death">
                         <p id="error-date-death" class="error-message is-hidden">Vul de overlijdensdatum van de
                             overledene in</p>
                     </fieldset>
@@ -176,7 +182,8 @@
                         <p id="error-location" class="error-message is-hidden">Vul een geldige locatie in.</p>
                         <legend>Datum van het testament of van de laatste wijziging</legend>
                         <label for="date-changes">Datum</label>
-                        <input type="date" id="date-changes" name="date-changes" min='2025-07-20' max='2026-03-20' aria-describedby="error-date-changes">
+                        <input type="date" id="date-changes" name="date-changes" min='2025-07-20' max='2026-03-20'
+                            aria-describedby="error-date-changes">
                         <p id="error-date-changes" class="error-message is-hidden">Vul een datum in.</p>
                     </fieldset>
                 </div>
@@ -279,7 +286,7 @@
                             <input type="text" id="addition" name="addition">
 
                             <label for="postal-code">Postcode</label>
-                            <input type="text" id="postal-code" name="postal-code">
+                            <input type="text" id="postal-code" name="postal-code" pattern="^[1-9][0-9]{3}\s?[a-zA-Z]{2}$">
 
                             <label for="city">Plaats</label>
                             <input type="text" id="city" name="city">
