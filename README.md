@@ -57,7 +57,7 @@ hoelang heb ik daarover gedaan? -> ik ben hier 2 uur mee bezig geweest.
 
 
 ### weekvoortgang
-Javascript files opsplitsen:
+Javascript files opsplitsen, van 1 file met 380 regels naar 4 korte overzichtelijke files:
 <img width="372" height="113" alt="Scherm­afbeelding 2026-03-02 om 13 49 22" src="https://github.com/user-attachments/assets/81905b42-62e6-42ff-8085-60c1222519c1" />
 <img width="337" height="132" alt="Scherm­afbeelding 2026-03-02 om 13 49 31" src="https://github.com/user-attachments/assets/88d9cf4b-259e-40d1-9cb2-8b7f5e42ceba" />
 
