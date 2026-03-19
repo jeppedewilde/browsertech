@@ -11,7 +11,7 @@
 
 <body class="no-js">
     <header>
-        <p>Let op! Dit is een schoolopdracht</p>
+        <p>Let op! Dit is een schoolopdracht!</p>
     </header>
     <main>
         <h1>Aangifte erfbelasting</h1>
@@ -252,9 +252,10 @@
                         <p id="error-lastname-authorized" class="error-message is-hidden">Vul uw achternaam in.</p>
 
                         <label for="institution">Naam instelling (bijvoorbeeld notarisbureau)</label>
-                        <input type="text" id="institution" name="institution" required
+                        <input type="text" id="institution" name="institution" minlength="2" required
                             aria-describedby="error-institution">
-                        <p id="error-institution" class="error-message is-hidden">Vul de naam van de instelling in.</p>
+                        <p id="error-institution" class="error-message is-hidden">Vul de naam van de instelling in
+                            (minimaal 2 tekens).</p>
                     </fieldset>
 
                     <fieldset>
@@ -277,16 +278,23 @@
                             <p><em>Vul dit adres in als de gemachtigde in Nederland woont.</em></p>
 
                             <label for="street">Straat</label>
-                            <input type="text" id="street" name="street">
+                            <input type="text" id="street" name="street" minlength="2" aria-describedby="error-street">
+                            <p id="error-street" class="error-message is-hidden">Vul een geldige straatnaam in.</p>
 
                             <label for="house-number">Huisnummer</label>
-                            <input type="text" id="house-number" name="house-number">
+                            <input type="text" id="house-number" name="house-number"
+                                pattern="^[1-9][0-9]*[a-zA-Z0-9\s\-]*$" aria-describedby="error-house-number">
+                            <p id="error-house-number" class="error-message is-hidden">Een huisnummer moet met een
+                                cijfer beginnen.</p>
 
                             <label for="addition">Huisnummertoevoeging</label>
                             <input type="text" id="addition" name="addition">
 
                             <label for="postal-code">Postcode</label>
-                            <input type="text" id="postal-code" name="postal-code" pattern="^[1-9][0-9]{3}\s?[a-zA-Z]{2}$">
+                            <input type="text" id="postal-code" name="postal-code"
+                                pattern="^[1-9][0-9]{3}\s?[a-zA-Z]{2}$" aria-describedby="error-postal-code">
+                            <p id="error-postal-code" class="error-message is-hidden">Vul een geldige postcode in (bijv.
+                                1234AB).</p>
 
                             <label for="city">Plaats</label>
                             <input type="text" id="city" name="city">
@@ -296,19 +304,62 @@
                             <p><em>Vul dit adres in als de gemachtigde in het buitenland woont.</em></p>
 
                             <label for="street-abroad">Straat</label>
-                            <input type="text" id="street-abroad" name="street-abroad">
+                            <input type="text" id="street-abroad" name="street-abroad" minlength="2"
+                                aria-describedby="error-street-abroad">
+                            <p id="error-street-abroad" class="error-message is-hidden">Vul een geldige straatnaam in.
+                            </p>
 
                             <label for="house-number-abroad">Huisnummer</label>
-                            <input type="text" id="house-number-abroad" name="house-number-abroad">
+                            <input type="text" id="house-number-abroad" name="house-number-abroad"
+                                aria-describedby="error-house-number-abroad">
+                            <p id="error-house-number-abroad" class="error-message is-hidden">Vul een huisnummer in.</p>
 
                             <label for="postal-code-abroad">Postcode</label>
-                            <input type="text" id="postal-code-abroad" name="postal-code-abroad">
+                            <input type="text" id="postal-code-abroad" name="postal-code-abroad" minlength="3"
+                                aria-describedby="error-postal-code-abroad">
+                            <p id="error-postal-code-abroad" class="error-message is-hidden">Vul een geldige postcode
+                                in.</p>
 
                             <label for="city-abroad">Plaats</label>
-                            <input type="text" id="city-abroad" name="city-abroad">
+                            <input type="text" id="city-abroad" name="city-abroad" minlength="2"
+                                aria-describedby="error-city-abroad">
+                            <p id="error-city-abroad" class="error-message is-hidden">Vul een geldige woonplaats in.</p>
 
                             <label for="country-code">Landcode</label>
-                            <input type="text" id="country-code" name="country-code">
+                            <input type="text" id="country-code" name="country-code" list="eu-countries"
+                                pattern="[A-Z]{3}" placeholder="Bijv. NLD" aria-describedby="error-country-code">
+
+                            <datalist id="eu-countries">
+                                <option value="BEL">België</option>
+                                <option value="BGR">Bulgarije</option>
+                                <option value="CYP">Cyprus</option>
+                                <option value="DNK">Denemarken</option>
+                                <option value="DEU">Duitsland</option>
+                                <option value="EST">Estland</option>
+                                <option value="FIN">Finland</option>
+                                <option value="FRA">Frankrijk</option>
+                                <option value="GRC">Griekenland</option>
+                                <option value="HUN">Hongarije</option>
+                                <option value="IRL">Ierland</option>
+                                <option value="ITA">Italië</option>
+                                <option value="HRV">Kroatië</option>
+                                <option value="LVA">Letland</option>
+                                <option value="LTU">Litouwen</option>
+                                <option value="LUX">Luxemburg</option>
+                                <option value="MLT">Malta</option>
+                                <option value="NLD">Nederland</option>
+                                <option value="AUT">Oostenrijk</option>
+                                <option value="POL">Polen</option>
+                                <option value="PRT">Portugal</option>
+                                <option value="ROU">Roemenië</option>
+                                <option value="SVN">Slovenië</option>
+                                <option value="SVK">Slowakije</option>
+                                <option value="ESP">Spanje</option>
+                                <option value="CZE">Tsjechië</option>
+                                <option value="SWE">Zweden</option>
+                            </datalist>
+                            <p id="error-country-code" class="error-message is-hidden">Vul een geldige 3-letterige
+                                landcode in (bijv. NLD).</p>
                         </div>
                     </fieldset>
 
@@ -316,39 +367,19 @@
                         <legend>Contactinformatie</legend>
 
                         <label for="phone-number">Telefoonnummer</label>
-                        <input type="tel" id="phone-number" name="phone-number" required>
+                        <input type="tel" id="phone-number" name="phone-number" required
+                            pattern="^[\+]?[0-9\s\-]{10,15}$" aria-describedby="error-phone">
+                        <p id="error-phone" class="error-message is-hidden">Vul een geldig telefoonnummer in (bijv.
+                            0612345678 of +31612345678).</p>
 
                         <label for="email">E-mailadres</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required aria-describedby="error-email">
+                        <p id="error-email" class="error-message is-hidden">Vul een geldig e-mailadres in (bijv.
+                            naam@domein.nl).</p>
                     </fieldset>
                 </div>
             </section>
-            <!-- <section class="form-chapter">
-                <h2>Voor wie doet u aangifte?</h2>
-                <fieldset>
-                    <legend>Informatie verkrijgers</legend>
-                    <fieldset>
-                        <legend>Kies welke van onderstaande situaties voor u geldt.</legend>
-                        <input type="checkbox" id="executor" name="executor" aria-controls="nr-acquirers">
-                        <label for="executor"> Ik ben executeur en doe aangifte voor alle personen en/of instellingen
-                            die
-                            iets krijgen uit de nalatenschap (verkrijgers).</label>
-                        <input type="checkbox" id="heir_authorized" name="heir_authorized">
-                        <label for="heir_authorized"> Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor
-                            meerdere
-                            personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers).</label>
-                        <input type="checkbox" id="heir-multiple" name="heir-multiple">
-                        <label for="heir-multiple">Ik ben erfgenaam en doe samen met andere ergenamen aangifte.</label>
-                        <input type="checkbox" id="heir-solo" name="heir-solo">
-                        <label for="heir-solo">Ik ben erfgenaam en doe alleen aangifte voor mijzelf.</label>
-                        <input type="checkbox" name="no-heir" id="no-heir">
-                        <label for="no-heir">Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te doen.</label>
-                        <label for="nr-acquirers">Geef aan voor hoeveel verkrijgers u aangifte doet. Bent u zelf ook
-                            verkrijger? Tel uzelf dan ook mee. Aantal verkrijgers:</label>
-                        <input type="number" name="nr-acquirers" pattern="[0-9]{1-4}">
-                    </fieldset>
-                </fieldset>
-            </section> -->
+
             <button type="submit">Verzenden</button>
         </form>
     </main>

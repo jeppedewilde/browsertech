@@ -130,8 +130,8 @@ p {
 
 header p {
     background-color: red;
-    color: black;
-    font-size: var(--font-size-l);
+    color: white;
+    font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-bold);
     padding: var(--spacing-md);
     text-align: center;
@@ -165,6 +165,10 @@ fieldset {
     border: none;
     padding: 0;
     margin: 0 0 var(--spacing-lg) 0;
+}
+
+fieldset:has(input[name="residence-type"]) {
+    margin-bottom: 0;
 }
 
 legend {
@@ -211,7 +215,7 @@ input[type="date"]:focus,
 input[type="number"]:focus {
     outline: none;
     border-color: var(--color-border-focus);
-    box-shadow: 0 0 0 3px var(--color-brand-primary);
+    border-left: 4px solid var(--color-border-focus);
     background-color: var(--color-background-emphasis-primary);
 }
 
@@ -237,6 +241,7 @@ input[type="checkbox"]+label {
 .radio-group-wrapper {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0;
 }
 
 .radio-wrapper {
@@ -391,7 +396,6 @@ p.is-hidden {
     text-decoration-color: var(--color-brand-primary);
 }
 
-/* verberg vorige/volgende knoppen */
 .form-chapter.is-finished .chapter-content div.step-navigation {
     display: none;
 }
@@ -399,10 +403,9 @@ p.is-hidden {
 .form-chapter.is-finished .chapter-content .step,
 .form-chapter.is-finished .chapter-content .step.is-hidden {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 130px 1fr;
     align-items: center;
     row-gap: var(--spacing-sm);
-    column-gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
     padding-bottom: var(--spacing-md);
     border-bottom: 1px solid var(--color-border-default);
@@ -426,6 +429,7 @@ p.is-hidden {
 .form-chapter.is-finished .step label,
 .form-chapter.is-finished .step input {
     margin-bottom: 0;
+    max-width: 130px;
 }
 
 .form-chapter.is-finished .step input[type="text"],
@@ -436,6 +440,7 @@ p.is-hidden {
     background-color: transparent;
     border-color: var(--color-border-default);
     color: var(--color-content-subtle);
+    max-width: 154px;
 }
 
 /* PROGRESSBAR */
@@ -556,9 +561,7 @@ progress::-moz-progress-bar {
 
 /* responsiveness */
 @media (min-width: 768px) {
-
-    header,
-    main {
+    header, main {
         max-width: 550px;
     }
 
@@ -568,13 +571,25 @@ progress::-moz-progress-bar {
     input[type="date"],
     input[type="number"] {
         max-width: 550px;
+    }
+
+    .form-chapter.is-finished .chapter-content .step,
+    .form-chapter.is-finished .chapter-content .step.is-hidden {
+    grid-template-columns: 200px 1fr;
+    column-gap: var(--spacing-md);
+    }
+
+    .form-chapter.is-finished .step input[type="text"],
+    .form-chapter.is-finished .step input[type="date"],
+    .form-chapter.is-finished .step input[type="number"],
+    .form-chapter.is-finished .step input[type="email"],
+    .form-chapter.is-finished .step input[type="tel"] {
+    max-width: 200px;
     }
 }
 
 @media (min-width: 1024px) {
-
-    header,
-    main {
+    header, main {
         max-width: 700px;
     }
 
@@ -584,5 +599,23 @@ progress::-moz-progress-bar {
     input[type="date"],
     input[type="number"] {
         max-width: 700px;
+    }
+
+    .form-chapter.is-finished .step label,
+    .form-chapter.is-finished .step input {
+    max-width: 200px;
+}
+
+    .form-chapter.is-finished .chapter-content .step,
+    .form-chapter.is-finished .chapter-content .step.is-hidden {
+    grid-template-columns: 130px 1fr;
+    }
+
+    .form-chapter.is-finished .step input[type="text"],
+    .form-chapter.is-finished .step input[type="date"],
+    .form-chapter.is-finished .step input[type="number"],
+    .form-chapter.is-finished .step input[type="email"],
+    .form-chapter.is-finished .step input[type="tel"] {
+    max-width: none;
     }
 }
