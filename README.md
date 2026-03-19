@@ -26,8 +26,9 @@ wat ga ik de volgende keer doen? -> het formulier, dat nu alleen html is, enhanc
 
 
 ### weekvoortgang
-Deze eerste week van BT begon voor mij een beetje hobbelig omdat ik door mijn rijles de start van het vak had gemist. Ondanks dat heb ik de draad snel opgepakt en veel html geschreven. Ook heb ik mij meteen verdiept in patterns zodat ik die aan mijn html kon toevoegen. Ik heb per ongeluk 3 hoofdstukken uitgewerkt in plaats van 2, maar hoofdstuk 2 en 3 zijn niet heel lang dus ik denk dat ik beide wel kan uitwerken. Hierdoor ben ik wel iets langer dan gepland bezig geweest met het schrijven van html en heb ik nog niet gewerkt aan de progressive enhancement met javascript. Dit is hoe het formulier er nu uit ziet:
+Deze eerste week van BT begon voor mij een beetje hobbelig omdat ik door mijn rijles de start van het vak had gemist. Ondanks dat heb ik de draad snel opgepakt en veel html geschreven. Ook heb ik mij meteen verdiept in patterns zodat ik die aan mijn html kon toevoegen. Ik heb per ongeluk 3 hoofdstukken uitgewerkt in plaats van 2, maar hoofdstuk 2 en 3 zijn niet heel lang dus ik denk dat ik beide wel kan uitwerken. Hierdoor ben ik wel iets langer dan gepland bezig geweest met het schrijven van html en heb ik nog niet gewerkt aan de progressive enhancement met javascript. 
 
+Dit is hoe het formulier er nu uit ziet:
 <img width="1710" height="771" alt="Scherm­afbeelding 2026-03-02 om 12 06 47" src="https://github.com/user-attachments/assets/66fda614-1c8d-4aae-860a-731f87b5aa75" />
 <img width="1710" height="386" alt="Scherm­afbeelding 2026-03-02 om 12 07 01" src="https://github.com/user-attachments/assets/e73c04f1-b07d-4672-b529-b19fa3887ac5" />
 
@@ -50,13 +51,9 @@ wat ga ik morgen doen? -> Morgen ben ik ivm het rijexamen niet aanwezig maar ga 
 ### dinsdag 3 maart
 niet aanwezig ivm rijexamen
 
-wat heb ik vandaag gedaan? -> Ik dacht dat ik alles goed had gedaan met het splitsen, maar allerlei foutjes kwamen naar boven en ik heb vanalles heen en weer zitten copy pasten waardoor ik het overzicht zelf eigenlijk niet meer had.
+wat heb ik vandaag gedaan? -> Ik dacht dat ik alles goed had gedaan met het splitsen, maar allerlei foutjes kwamen naar boven en ik heb vanalles heen en weer zitten copy pasten waardoor ik het overzicht zelf eigenlijk niet meer had. Ik heb geprobeerd dat recht te zetten maar ben daar helaas niet helemaal uit gekomen.
 
-hoelang heb ik daarover gedaan? -> 
-
-wat heb ik geleerd? -> 
-
-wat ga ik de volgende keer doen? -> 
+hoelang heb ik daarover gedaan? -> ik ben hier 2 uur mee bezig geweest.
 
 
 ### weekvoortgang
@@ -64,7 +61,8 @@ Javascript files opsplitsen:
 <img width="372" height="113" alt="Scherm­afbeelding 2026-03-02 om 13 49 22" src="https://github.com/user-attachments/assets/81905b42-62e6-42ff-8085-60c1222519c1" />
 <img width="337" height="132" alt="Scherm­afbeelding 2026-03-02 om 13 49 31" src="https://github.com/user-attachments/assets/88d9cf4b-259e-40d1-9cb2-8b7f5e42ceba" />
 
-Vrijdag had ik een voortgangsgesprek met Victor. 
+Vrijdag had ik een voortgangsgesprek met Victor. Ik kreeg de feedback dat ik inmiddels wel aan de styling mocht beginnen zodat het een wat mooier geheel werd. De focus lag deze week op het splitsen van mijn JavaScript in modules (main.js, stepper.js, validation.js, conditions.js). Hoewel dit in het begin voor veel bugs en irritaties zorgde (vooral door paden en scope-problemen), heb ik nu een veel overzichtelijker systeem in mijn js files. Een goede mappenstructuur zorgt ervoor dat er veel efficienter gewerkt kan worden.
+
 
 ## week 3
 
@@ -73,13 +71,13 @@ wat heb ik vandaag gedaan? -> De dag begon met Weekly Geek Rijk van Zanten, ik h
 
 hoelang heb ik daarover gedaan? -> Weekly geek: 45 min. Workshop: 45 min. Overzicht/oplossingen JS: 2 uur. Styling: 2,5 uur. 
 
-wat heb ik geleerd? -> Ik heb geleerd hoeveel makkleijker styling is wanneer je dat tot later bewaard en dan alles met variabelen erin knalt! Er gaat een wereld voor mij open hahaha
+wat heb ik geleerd? -> Ik heb geleerd hoeveel makkleijker styling is wanneer je dat tot later bewaard en dan alles met variabelen erin knalt! Er gaat een wereld voor mij open hahaha.
 
 wat ga ik de volgende keer doen? -> Morgen ga ik de validatie en styling verbeteren, kijken naar responsiveness en met css progressive disclosure toevoegen aan het uitklap overzicht.
 
 
 ### dinsdag 10 maart
-wat heb ik vandaag gedaan? -> Vandaag begonnen we met de weekly geek, we hadden een filmpje gekeken over input fields en moesten daarover een wooclap quiz doen. Daarna ben ik aan de slag gegaan met het verbeteren van mijn validatie, het toevoegen van progressive disclosure met css (voor als js niet werkt) en responsiveness. Daarnaast heb ik gewerkt aan mijn styling maar die is nog niet af. Tijdens de check-out heb ik dit alles besproken met ...
+wat heb ik vandaag gedaan? -> Vandaag begonnen we met de weekly geek, we hadden een filmpje gekeken over input fields en moesten daarover een wooclap quiz doen. Daarna ben ik aan de slag gegaan met het verbeteren van mijn validatie, het toevoegen van progressive disclosure met css (voor als js niet werkt) en responsiveness. Daarnaast heb ik gewerkt aan mijn styling maar die is nog niet af. Tijdens de check-out heb ik dit alles besproken met ... (ik ben de naam vergeten).
 
 hoelang heb ik daarover gedaan? -> Hier ben ik de hele dag mee bezig geweest.
 
@@ -89,30 +87,60 @@ wat ga ik de volgende keer doen? -> Styling en validatie perfectionaliseren!
 
 
 ### weekvoortgang
+In week 3 heb ik het formulier tot leven gewekt met CSS variabelen die ik uit de NS tractie haalde, door het toevoegen van de styling zag het er in enkele uren meteen 100x beter uit, dat gaf een goed gevoel. Daarnaast heb ik veel tijd gestoken in het toevoegen van progressive disclosure met css. Ik heb een class op de body gezet genaamd no-js en onder die classnaam in css de progressive disclosure gebouwd. In mijn javascript verwijder ik die class zodat wanneer javascript werkt, de progressive disclosure gewoon in mijn javascript stepper gebeurd. 
+
+<img width="599" height="300" alt="Scherm­afbeelding 2026-03-10 om 13 41 13" src="https://github.com/user-attachments/assets/9820ab33-b196-4d04-97e2-8f31d9ea5188" />
+
+<img width="427" height="687" alt="Scherm­afbeelding 2026-03-10 om 12 21 14" src="https://github.com/user-attachments/assets/04d9fc2f-0e8f-4a89-a86f-bb34faa2e9f7" />
+
+<img width="1030" height="772" alt="Scherm­afbeelding 2026-03-10 om 11 36 58" src="https://github.com/user-attachments/assets/6c9b16bb-604f-4d73-a92b-8b6f4b5ee746" />
+
+<img width="596" height="676" alt="Scherm­afbeelding 2026-03-09 om 15 54 57" src="https://github.com/user-attachments/assets/dd9a8004-81c0-4591-bba7-acb8f10ff026" />
+
+<img width="651" height="606" alt="Scherm­afbeelding 2026-03-19 om 15 18 00" src="https://github.com/user-attachments/assets/4554ae0a-66af-4eb0-8e53-126541884827" />
+
+<img width="628" height="185" alt="Scherm­afbeelding 2026-03-19 om 15 17 42" src="https://github.com/user-attachments/assets/725785e0-c8ca-4e75-8be2-ea80a88a329f" />
 
 
 
 ## week 4
 
 ### maandag 16 maart
-wat heb ik vandaag gedaan? -> 
+wat heb ik vandaag gedaan? -> Vandaag had ik al de hele dag een beetje hoofdpijn waardoor mijn werktempo niet erg hoog lag. Ik heb wat validatie toegevoegd en ik heb vooral verder gewerkt aan de styling. Daarnaast heb ik wel nog een progressbar toegevoegd bij hoofdstuk 1. Ook had ik vandaag mijn voortgangsgesprek met Vasilis omdat ik het gesprek met Victor vrijdag niet kon bijwonen. Vasilis gaf feedback op mijn waarschuwingsbanner, hij vond zwart op rood niet genoeg kleurcontrast, en vroeg mij na te denken over hoe ik het inputfield met de landcode toegankelijk kon maken voor iemand die niet weet wat zijn/haar landcode is. Na het voortgangsgesprek heb ik een aantal klasgenoten geholpen die een beetje vastliepen.
 
-hoelang heb ik daarover gedaan? -> 
+Progressbar:
+<img width="628" height="101" alt="Scherm­afbeelding 2026-03-19 om 15 17 09" src="https://github.com/user-attachments/assets/a3abcc3b-724e-46f8-9660-5faf93f613d8" />
 
-wat heb ik geleerd? -> 
 
-wat ga ik de volgende keer doen? -> 
+hoelang heb ik daarover gedaan? -> Het voortgangsgesprek duurde ongeveer 30 minuten, ik ben zo'n 45 min met klasgenoten in gesprek geweest en de rest van de dag heb ik aan mijn website gewerkt.
+
+wat heb ik geleerd? -> Ik heb vandaag niet met nieuwe stof gewerkt.
+
+wat ga ik de volgende keer doen? -> Op mijn to do list staat nog het toevoegen van validatie aan hoofdstuk 2, responsiveness verbeteren en de styling nog wat beter maken.
 
 
 ### dinsdag 17 maart
-wat heb ik vandaag gedaan? -> 
+wat heb ik vandaag gedaan? -> Vandaag zat ik met een migraine thuis en heb ik niet aan bt kunnen werken.
 
-hoelang heb ik daarover gedaan? -> 
 
-wat heb ik geleerd? -> 
 
-wat ga ik de volgende keer doen? -> 
+### donderdag 19 maart
+wat heb ik vandaag gedaan? -> Vandaag heb ik wat puntjes op de i gezet, zoals het toevoegen van validatie aan het hoofdstuk gegevens gemachtigde en heb ik de responsiveness verbeterd. Daarnaast heb ik kleine dingetjes gefixt in de styling en de tekst van de waarschuwingsborder veranderd. Ook heb ik een datalist met europese landcodes toegevoegd.
+
+Kleine details in de styling, border-left dikker:
+<img width="628" height="87" alt="Scherm­afbeelding 2026-03-19 om 15 16 51" src="https://github.com/user-attachments/assets/4942e07d-27b1-4233-a02f-ddc604085810" />
+
+hoelang heb ik daarover gedaan? -> Ik ben in totaal ongeveer 2/3 uur bezig geweest.
+
+wat had ik nog gedaan als ik langer aan dit project door zou werken? -> DIT NOG INVULLEN!
 
 
 ### weekvoortgang
+De laatste week stond in het teken van de finishing touches en toegankelijkheid. Naar aanleiding van de feedback van Vasilis heb ik het kleurcontrast van mijn waarschuwingsbanner hersteld naar WCAG-normen. Daarnaast heb ik een verbetering doorgevoerd voor de landcodes: in plaats van dat de gebruiker een 3-letterige code uit zijn hoofd moet kennen, heb ik een <datalist> toegevoegd. Hierdoor kunnen ze de naam van een Europees land typen en vult de browser automatisch de juiste 3-letterige code in. Ook heb ik de validatie in hoofdstuk 2 verbeterd met patterns in de html, die door mijn bestaande JavaScript-validatie automatisch worden opgepakt.
+
+Datalist voor landcodes:
+<img width="651" height="232" alt="Scherm­afbeelding 2026-03-19 om 15 18 38" src="https://github.com/user-attachments/assets/431593bc-80d8-4d5b-89c6-d46983707a60" />
+<img width="651" height="85" alt="Scherm­afbeelding 2026-03-19 om 15 18 27" src="https://github.com/user-attachments/assets/2ec8d837-3707-4406-851e-a5b3e5401203" />
+
+
 
