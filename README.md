@@ -89,18 +89,23 @@ wat ga ik de volgende keer doen? -> Styling en validatie perfectionaliseren!
 ### weekvoortgang
 In week 3 heb ik het formulier tot leven gewekt met CSS variabelen die ik uit de NS tractie haalde, door het toevoegen van de styling zag het er in enkele uren meteen 100x beter uit, dat gaf een goed gevoel. Daarnaast heb ik veel tijd gestoken in het toevoegen van progressive disclosure met css. Ik heb een class op de body gezet genaamd no-js en onder die classnaam in css de progressive disclosure gebouwd. In mijn javascript verwijder ik die class zodat wanneer javascript werkt, de progressive disclosure gewoon in mijn javascript stepper gebeurd. 
 
-<img width="599" height="300" alt="Scherm­afbeelding 2026-03-10 om 13 41 13" src="https://github.com/user-attachments/assets/9820ab33-b196-4d04-97e2-8f31d9ea5188" />
-
-<img width="427" height="687" alt="Scherm­afbeelding 2026-03-10 om 12 21 14" src="https://github.com/user-attachments/assets/04d9fc2f-0e8f-4a89-a86f-bb34faa2e9f7" />
-
-<img width="1030" height="772" alt="Scherm­afbeelding 2026-03-10 om 11 36 58" src="https://github.com/user-attachments/assets/6c9b16bb-604f-4d73-a92b-8b6f4b5ee746" />
-
+Zonder styling:
 <img width="596" height="676" alt="Scherm­afbeelding 2026-03-09 om 15 54 57" src="https://github.com/user-attachments/assets/dd9a8004-81c0-4591-bba7-acb8f10ff026" />
 
-<img width="651" height="606" alt="Scherm­afbeelding 2026-03-19 om 15 18 00" src="https://github.com/user-attachments/assets/4554ae0a-66af-4eb0-8e53-126541884827" />
+Styling toegevoegd:
+<img width="1030" height="772" alt="Scherm­afbeelding 2026-03-10 om 11 36 58" src="https://github.com/user-attachments/assets/6c9b16bb-604f-4d73-a92b-8b6f4b5ee746" />
 
+Validatie, fout:
+<img width="599" height="300" alt="Scherm­afbeelding 2026-03-10 om 13 41 13" src="https://github.com/user-attachments/assets/9820ab33-b196-4d04-97e2-8f31d9ea5188" />
+
+Validatie, goed:
+<img width="427" height="687" alt="Scherm­afbeelding 2026-03-10 om 12 21 14" src="https://github.com/user-attachments/assets/04d9fc2f-0e8f-4a89-a86f-bb34faa2e9f7" />
+
+Overzicht ingeklapt:
 <img width="628" height="185" alt="Scherm­afbeelding 2026-03-19 om 15 17 42" src="https://github.com/user-attachments/assets/725785e0-c8ca-4e75-8be2-ea80a88a329f" />
 
+Overzicht uitgeklapt:
+<img width="651" height="606" alt="Scherm­afbeelding 2026-03-19 om 15 18 00" src="https://github.com/user-attachments/assets/4554ae0a-66af-4eb0-8e53-126541884827" />
 
 
 ## week 4
@@ -132,7 +137,7 @@ Kleine details in de styling, border-left dikker:
 
 hoelang heb ik daarover gedaan? -> Ik ben in totaal ongeveer 2/3 uur bezig geweest.
 
-wat had ik nog gedaan als ik langer aan dit project door zou werken? -> DIT NOG INVULLEN!
+wat had ik nog gedaan als ik langer aan dit project door zou werken? -> Als ik meer tijd had gehad voor dit project had ik nog veel kunnen doen om het formulier te verbeteren. Ik had meer van de bonuseisen willen toevoegen, zoals local storage en een prinsheet. Daarnaast had ik wel een postcode API willen toevoegen om fouten bij het invullen van het adres te voorkomen. Daarnaast had ik nog uren kunnen priegelen aan kleine details in de styling haha.
 
 
 ### weekvoortgang
